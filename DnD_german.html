@@ -962,7 +962,7 @@
 
                                     <div class="sheet-col-1-7"><input class="inMainTxt" style="margin-left: 8px; width: 90px" placeholder="0/0/0" type="text" name="attr_RangedDistance4"></div>
 
-                                    <div class="sheet-col-1-9" title="Choose the distance to your Target">
+                                    <div class="sheet-col-1-9" title="Wähle die Distanz zum Ziel">
 
                                         <select name="attr_RangeToTarget4" style="text-align: center; width: 80px;">
 
@@ -1952,7 +1952,7 @@
 
                                             <li><b>Treffsicherheit :</b> +1 auf Fernkampfangriffe, addiert sich auf GES Bonus<br/></li>
 
-                                            <li><b>Klein gewachsen :</b> -2 auf RK bei Angriffen übermenschengroßen Kreaturen<br/></li>
+                                            <li><b>Klein gewachsen :</b> -2 auf RK bei Angriffen übermenschengroßer Kreaturen<br/></li>
 
                                             <li><b>[Optional] Schnell :</b> +1 auf persönliche Initiative, addiert sich auf GES Bonus<br/></li>
 
@@ -2555,7 +2555,7 @@
                             </div>
                             <div style="display: table-row; width: 100%;">
                                 <div style="display:table-cell;text-align: center; width: 200px">
-                                    <input type="number" name="attr_encumbrance" class="sheet-inLrgNum" title="Belastung : Das vom Charakter getragene Gesamtgewicht" value="{@{inventory_weight_calc} + @{magic_inventory_weight_calc} + @{treasure_weight_calc}}" disabled="disabled"/>
+                                    <input type="number" name="attr_encumbrance" class="sheet-inLrgNum" title="Belastung : Das vom Charakter getragene Gesamtgewicht" value="@{inventory_weight_calc} + @{magic_inventory_weight_calc} + @{treasure_weight_calc}" disabled="disabled"/>
                                     Münzen
                                 </div>
                                 <div style="display:table-cell; width: 187px">
@@ -2842,7 +2842,7 @@
                             </div>
                             <!-- END inventory row -->
                         </div>
-                        <!-- END inventory page --><input type="hidden" name="attr_magic_inventory_weight_calc" value="{@{magic_inventoryweight1} + @{magic_inventoryweight2} + @{magic_inventoryweight3} + @{magic_inventoryweight4} + @{magic_inventoryweight5} + @{magic_inventoryweight6} + @{magic_inventoryweight7} + @{magic_inventoryweight8} + @{magic_inventoryweight9} + @{magic_inventoryweight10} + @{magic_inventoryweight11} + @{magic_inventoryweight12} + @{magic_inventoryweight13} + @{magic_inventoryweight14} + @{magic_inventoryweight15} + @{magic_inventoryweight16} + @{magic_inventoryweight17} + @{magic_inventoryweight18} + @{magic_inventoryweight19} + @{magic_inventoryweight20}{" />
+                        <!-- END inventory page --><input type="hidden" name="attr_magic_inventory_weight_calc" value="@{magic_inventoryweight1} + @{magic_inventoryweight2} + @{magic_inventoryweight3} + @{magic_inventoryweight4} + @{magic_inventoryweight5} + @{magic_inventoryweight6} + @{magic_inventoryweight7} + @{magic_inventoryweight8} + @{magic_inventoryweight9} + @{magic_inventoryweight10} + @{magic_inventoryweight11} + @{magic_inventoryweight12} + @{magic_inventoryweight13} + @{magic_inventoryweight14} + @{magic_inventoryweight15} + @{magic_inventoryweight16} + @{magic_inventoryweight17} + @{magic_inventoryweight18} + @{magic_inventoryweight19} + @{magic_inventoryweight20}" />
             
    
                     </div>
@@ -3098,7 +3098,7 @@
                             </div>
                             <!-- END inventory row -->
                         </div>
-                        <!-- END inventory page --><input type="hidden" name="attr_inventory_weight_calc" type="number" value="{@{inventoryweight1} + @{inventoryweight2} + @{inventoryweight3} + @{inventoryweight4} + @{inventoryweight5} + @{inventoryweight6} + @{inventoryweight7} + @{inventoryweight8} + @{inventoryweight9} + @{inventoryweight10} + @{inventoryweight11} + @{inventoryweight12} + @{inventoryweight13} + @{inventoryweight14} + @{inventoryweight15} + @{inventoryweight16} + @{inventoryweight17} + @{inventoryweight18} + @{inventoryweight19} + @{inventoryweight20}}" />
+                        <!-- END inventory page --><input type="hidden" name="attr_inventory_weight_calc" type="number" value="@{inventoryweight1} + @{inventoryweight2} + @{inventoryweight3} + @{inventoryweight4} + @{inventoryweight5} + @{inventoryweight6} + @{inventoryweight7} + @{inventoryweight8} + @{inventoryweight9} + @{inventoryweight10} + @{inventoryweight11} + @{inventoryweight12} + @{inventoryweight13} + @{inventoryweight14} + @{inventoryweight15} + @{inventoryweight16} + @{inventoryweight17} + @{inventoryweight18} + @{inventoryweight19} + @{inventoryweight20}" />
                     </div> <!-- END CELL EQUIP OTHERS -->
             </div> <!-- END EQUIPMENT -->
 
