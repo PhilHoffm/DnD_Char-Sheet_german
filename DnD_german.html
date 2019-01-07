@@ -11,7 +11,7 @@
 
     <!-- PC / MONSTER TABS -->
 
-    <!--<input class="sheet-is-monster" type="checkbox" name="attr_is_monster" value="1"><span class="sheet-is-monster-tab"></span>-->
+    <input class="sheet-is-monster" type="checkbox" name="attr_is_monster" value="1"><span class="sheet-is-monster-tab"></span>
 
     <!-- 3 way toggle - STYLE 2 -->
 
@@ -23,9 +23,9 @@
 
     <span class="sheet-maintab sheet-player">Charakterbogen</span>
 
-    <!-- <input type="radio" name="attr_maintab" class="sheet-maintab sheet-monster" value="4" title="Monsterbogen" />
+    <input type="radio" name="attr_maintab" class="sheet-maintab sheet-monster" value="4" title="Monsterbogen" />
 
-    <span class="sheet-maintab sheet-monster">Monsterbogen</span> -->
+    <span class="sheet-maintab sheet-monster">Monster-/NSC-bogen</span>
 
     <!--SETTINGS -->
 
@@ -3222,7 +3222,7 @@
 
                 <div style="display: table-row">
 
-                    <div class="sheet-title1" style="width: 10%; text-align: center; font-size: 25px"><u>MONSTER SHEET</u></div>
+                    <div class="sheet-title1" style="width: 10%; text-align: center; font-size: 25px"><u>MONSTER-/NSC-BOGEN</u></div>
 
                 </div>
 
@@ -3242,7 +3242,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">RANDOM ENCOUNTERS</div>
+                                <div  class="sheet-title1">ZUFÄLLIGE BEGEGNUNG</div>
 
                             </div>
 
@@ -3256,7 +3256,7 @@
 
                         <div class="sheet-row">
 
-                            <div class="sheet-col-4-17 sheet-ability-text sheet-vert-middle">Random Encounters</div>
+                            <div class="sheet-col-4-17 sheet-ability-text sheet-vert-middle">Zufällige Begegnungen</div>
 
                                 <input type="hidden" name="attr_RandomEncounter-die" value="1d6cs1cf6">
 
@@ -3264,7 +3264,7 @@
 
                                 <div class="sheet-col-1-16 sheet-vert-middle">
 
-                                    <button type='roll' name="Random Encounter" value="/w gm &{template:odnd} {{stat=1}} {{title=Random Encounter}} {{randomencounter=[[@{RandomEncounter-die}]]}} {{chance=[[@{RandomEncounter-chance}]]}}" title="Random Encounter"></button>
+                                    <button type='roll' name="Zufällige Begegnung" value="/w gm &{template:odnd} {{stat=1}} {{title=Zufällige Begegnung}} {{randomencounter=[[@{RandomEncounter-die}]]}} {{chance=[[@{RandomEncounter-chance}]]}}" title="Zufällige Begegnung"></button>
 
                                 </div>
 
@@ -3278,11 +3278,11 @@
 
                                 <input type="hidden" name="attr_RandomDistance-multiplier" value="10">
 
-                                <div class="sheet-col-5-17 sheet-ability-text sheet-vert-middle">Random Encounter Distance</div>
+                                <div class="sheet-col-5-17 sheet-ability-text sheet-vert-middle">Zufällige Begegnung Entfernung</div>
 
                                 <div class="sheet-col-1-16 sheet-vert-middle">
 
-                                    <button type='roll' name="Random Distance" value="/w gm &{template:odnd} {{stat=1}} {{title=Random Encounter Distance}} {{randomdistance=[[@{RandomDistance-die} * [[@{RandomDistance-multiplier}]] ]]}}" name='Distance' title="Distance Check"></button>
+                                    <button type='roll' name="Zufällige Distanz" value="/w gm &{template:odnd} {{stat=1}} {{title=Zufällige Begegnung Entfernung}} {{randomdistance=[[@{RandomDistance-die} * [[@{RandomDistance-multiplier}]] ]]}}" name='Distance' title="Entfernungs Check"></button>
 
                                 </div>
 
@@ -3306,7 +3306,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">MONSTER INFO</div>
+                                <div  class="sheet-title1">MONSTER/NSC INFO</div>
 
                             </div>
 
@@ -3338,11 +3338,11 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Current" name="attr_MonsterHP"><br/>Hit Points</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Aktuell" name="attr_MonsterHP"><br/>Trefferpunkte</div>
 
                                 <b>&nbsp;/&nbsp;</b>
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Max" name="attr_MonsterHP_max"><br/>Max HP</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Max" name="attr_MonsterHP_max"><br/>Max TP</div>
 
                             </div>
 
@@ -3360,7 +3360,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold;" type="text" placeholder="Monster Type" name="attr_MonsterType"><br/>Monster Type</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold;" type="text" placeholder="Monster Typ" name="attr_MonsterType"><br/>Monster Typ</div>
 
                             </div>
 
@@ -3372,7 +3372,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Armor Class" name="attr_MonsterAC"><br/>Armor Class</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="RK" name="attr_MonsterAC"><br/>Rüstungsklasse</div>
 
                             </div>
 
@@ -3390,15 +3390,15 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="1" name="attr_MonsterHD"><br/># Hit Dice</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="1" name="attr_MonsterHD"><br/># TW</div>
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="0" name="attr_MonsterHDBonus"><br/>HD Bonus</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="0" name="attr_MonsterHDBonus"><br/>TW Bonus</div>
 
                                     <input type="hidden" name="attr_MonsterHit-die" value="(@{MonsterHD})d8cs8cf1" />
 
                                     <div class="sheet-col-1-10 sheet-vert-middle">
 
-                                        <button type='roll' value="/w gm &{template:odnd} {{name=@{MonsterName}}} {{title=Monster Hit Points}} {{MonsterHD=[[@{MonsterHit-die} + @{MonsterHDBonus}]]}}" name='Monster HP' title="Roll for monster's Hit Points"></button>
+                                        <button type='roll' value="/w gm &{template:odnd} {{name=@{MonsterName}}} {{title=Monster Trefferpunkte}} {{MonsterHD=[[@{MonsterHit-die} + @{MonsterHDBonus}]]}}" name='Monster TP' title="Wurf für Monster/NSC TP"></button>
 
                                     </div>
 
@@ -3412,7 +3412,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Movement" name="attr_MonsterMove"><br/>Movement</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Bewegung" name="attr_MonsterMove"><br/>Bewegung</div>
 
                             </div>
 
@@ -3428,7 +3428,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-6-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="No. Appearing" name="attr_MonsterQty"><br/>No. Appearing</div>
+                                <div class="sheet-col-6-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Anzahl" name="attr_MonsterQty"><br/>Anzahl der Begegnung</div>
 
                             </div>
 
@@ -3440,13 +3440,13 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-11-13 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.0em; font-weight: bold" type="text" placeholder="Monster Morale" name="attr_MonsterMorale"><br/>Monster Morale</div>
+                                <div class="sheet-col-11-13 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.0em; font-weight: bold" type="text" placeholder="Moral" name="attr_MonsterMorale"><br/>Monster Moral</div>
 
                                 <input type="hidden" name="attr_MonsterMorale-die" value="2d6cs1cf6" />
 
                                 <div class="sheet-col-1-13 sheet-vert-middle">
 
-                                    <button type='roll' name="Monster Morale Check" value="/w gm &{template:odnd} {{stat=1}} {{name=@{MonsterName}}} {{title=Monster Morale Check}} {{moralecheck=[[@{MonsterMorale-die}]]}} {{chance=[[@{MonsterMorale}]]}}" name='Monster Morale' title="Monster Morale Check"></button>
+                                    <button type='roll' name="Monster Moralwurf" value="/w gm &{template:odnd} {{stat=1}} {{name=@{MonsterName}}} {{title=Monster Moralwurf}} {{moralecheck=[[@{MonsterMorale-die}]]}} {{chance=[[@{MonsterMorale}]]}}" name='Monster Moral' title="Monster Moralwurf"></button>
 
                                 </div>
 
@@ -3466,7 +3466,7 @@
 
                                 <div class="sheet-col-1-1 sheet-center">&nbsp;</div>
 
-                                <div class="sheet-col-4-7 sheet-ability-text sheet-vert-bottom" style="font-size: 1.1em; font-weight: bold">Monster Surprise</div>
+                                <div class="sheet-col-4-7 sheet-ability-text sheet-vert-bottom" style="font-size: 1.1em; font-weight: bold">Monster Überraschung</div>
 
                                     <input type="hidden" name="attr_MonsterSurprise-die" value="1d6cs6cf1" />
 
@@ -3474,7 +3474,7 @@
 
                                     <div class="sheet-col-1-9 sheet-vert-bottom">
 
-                                        <button type='roll' name="Action: Surprise" value="/w gm &{template:odnd} {{class=1}} {{name=@{MonsterName}}} {{title=Monster Surprise Check}} {{surprise=[[ @{MonsterSurprise-die} + (?{Bonus/Minus|0}) ]] }} {{chance=[[@{MonsterSurprise-chance}]]}}"></button>
+                                        <button type='roll' name="Aktion: Überraschen" value="/w gm &{template:odnd} {{class=1}} {{name=@{MonsterName}}} {{title=Monster Überraschenwurf}} {{surprise=[[ @{MonsterSurprise-die} + (?{Bonus/Minus|0}) ]] }} {{chance=[[@{MonsterSurprise-chance}]]}}"></button>
 
                                     </div>
 
@@ -3492,7 +3492,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-8 sheet-left"><input class="sheet-inMainTxt sheet-center" style="text-align: center; font-size: 1.1em; font-weight: bold" type="text" name="attr_MonsterAlignment" placeholder="Alignment"<br/>Alignment</div>
+                                <div class="sheet-col-1-8 sheet-left"><input class="sheet-inMainTxt sheet-center" style="text-align: center; font-size: 1.1em; font-weight: bold" type="text" name="attr_MonsterAlignment" placeholder="Gesinnung"<br/>Gesinnung</div>
 
                             </div>
 
@@ -3510,7 +3510,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Treasure Type" name="attr_MonsterTreasure"><br/>Treasure Type</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Schatztyp" name="attr_MonsterTreasure"><br/>Schatztyp</div>
 
                             </div>
 
@@ -3526,7 +3526,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="XP Value" name="attr_MonsterXP"><br/>Monster XP Value</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="EP-Wert" name="attr_MonsterXP"><br/>Monster EP-Wert</div>
 
                             </div>
 
@@ -3552,7 +3552,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">MONSTER SAVING THROWS</div>
+                                <div  class="sheet-title1">MONSTER RETTUNGSWÜRFE</div>
 
                             </div>
 
@@ -3566,7 +3566,7 @@
 
                             <div class="sheet-row"> <!-- Save As -->
 
-                                <div class="sheet-col-1-4 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Save As" name="attr_MonsterSave"><br/>Monster Save</div>
+                                <div class="sheet-col-1-4 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="RW wie" name="attr_MonsterSave"><br/>Monster RW</div>
 
                             </div> <!--END Save As -->
 
@@ -3596,11 +3596,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' style="font-family: 'Gloria Hallelujah', cursive; font-weight: bold; font-size: 1.2em;" value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Poison or Death Ray}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Poison}]]}}" name='ST_Poison' class="sheet-savingthrow-roll" title="Poison Save"></button>
+                                                <button type='roll' style="font-family: 'Gloria Hallelujah', cursive; font-weight: bold; font-size: 1.2em;" value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Gift/Todesmagie}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Poison}]]}}" name='ST_Poison' class="sheet-savingthrow-roll" title="Gift RW"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">POISON or DEATH RAY</div>
+                                            <div class="sheet-savingthrow-lib">GIFT oder TODESMAGIE</div>
 
                                         </div> <!-- END Monster Poison ST -->
 
@@ -3624,11 +3624,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Magic Wand}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Wand}]]}}" name='ST_Wand' class="sheet-savingthrow-roll" title="Wand Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Zauberstab}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Wand}]]}}" name='ST_Wand' class="sheet-savingthrow-roll" title="RW Zauberstab"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">MAGIC WAND</div>
+                                            <div class="sheet-savingthrow-lib">ZAUBERSTAB</div>
 
                                         </div> <!-- END Wand ST -->
 
@@ -3656,11 +3656,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Turn to Stone or Paralysis}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Stone}]]}}" name='ST_Stone' class="sheet-savingthrow-roll" title="Stone Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Zu Stein erstarren/ Lähmung}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Stone}]]}}" name='ST_Stone' class="sheet-savingthrow-roll" title="RW Stein/Lähmung"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">TURN TO STONE or PARALYSIS</div>
+                                            <div class="sheet-savingthrow-lib">ZU STEIN ERSTARREN/ LÄHMUNG</div>
 
                                         </div> <!-- END Stone ST -->
 
@@ -3684,11 +3684,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Dragon Breath}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Breath}]]}}" name='ST_Breath' class="sheet-savingthrow-roll" title="Breath Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Drachenodem}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Breath}]]}}" name='ST_Breath' class="sheet-savingthrow-roll" title="RW Drachenodem"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">DRAGON BREATH</div>
+                                            <div class="sheet-savingthrow-lib">DRACHENODEM</div>
 
                                         </div> <!-- Breath ST -->
 
@@ -3716,11 +3716,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Spells or Magic Staff}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Spells}]]}}" name='ST_Spells' class="sheet-savingthrow-roll" title="Spell Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Zauber o. -stecken, -ruten}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Spells}]]}}" name='ST_Spells' class="sheet-savingthrow-roll" title="RW Zauber"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">SPELLS or MAGIC STAFF</div>
+                                            <div class="sheet-savingthrow-lib">ZAUBERSPRÜCHE, -STECKEN oder -RUTEN</div>
 
                                         </div> <!-- END Spells ST -->
 
@@ -3752,7 +3752,7 @@
 
                                     <div class="sheet-col-3-14 sheet-center sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
-                                    <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Against</div>
+                                    <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Gegen</div>
 
                                     <div class="sheet-col-1-21 sheet-center sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
@@ -3770,11 +3770,11 @@
 
                                             <div class="sheet-col-1-23 sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
-                                            <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_MonsterstBonus" placeholder="+0" title="Saving Throw Bonus"></div>
+                                            <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_MonsterstBonus" placeholder="+0" title="Rettungswurfbonus"></div>
 
                                             <div class="sheet-col-1-10 sheet-center">&nbsp;</div>
 
-                                            <div class="sheet-col-7-23 sheet-vert-middle"><input type="text" class="sheet-inMainTxt sheet-center" name="attr_MonsterstAgainst" title="Against" placeholder="Bonus against"></div>
+                                            <div class="sheet-col-7-23 sheet-vert-middle"><input type="text" class="sheet-inMainTxt sheet-center" name="attr_MonsterstAgainst" title="Gegen" placeholder="Bonus gegen"></div>
 
                                         </div>
 
@@ -3810,7 +3810,7 @@
 
                             <div style="display: table-row;text-align: center;">
 
-                                <div style="display: table-cell; text-align: right;"><b>AC :</b></div>
+                                <div style="display: table-cell; text-align: right;"><b>RK :</b></div>
 
                                 <div style="display: table-cell;text-align: center;">9</div>
 
@@ -3836,7 +3836,7 @@
 
                             <div style="display: table-row;text-align: center;">
 
-                                <div style="display: table-cell; text-align: left;"><b>MONSTER "TO HIT" ROLL</b></div>
+                                <div style="display: table-cell; text-align: left;"><b>MONSTER ETW0</b></div>
 
                                 <div style="display: table-cell;"><input type="number" name="attr_MonsterHitAC9" class="sheet-inSmallNum" value="0" readonly="readonly"/></div>
 
@@ -3878,7 +3878,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">MONSTER ATTACKS</div>
+                                <div  class="sheet-title1">MONSTER ANGRIFF</div>
 
                             </div>
 
@@ -3906,7 +3906,7 @@
 
                                 <div class="sheet-col-12-17">
 
-                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_MonsterInitBonus" title="Initiative Bonus if any"><br/>Bonus</div>
+                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_MonsterInitBonus" title="Initiativbonus, falls vorhanden"><br/>Bonus</div>
 
                                     <input type="hidden" name="attr_MonsterInit-die" value="1d6cf1cs6">
 
@@ -3934,13 +3934,13 @@
 
                                     <div class="sheet-col-3-17 sheet-center">&nbsp;</div>
 
-                                    <div class="sheet-col-12-17 sheet-ability-text sheet-vert-middle" style="font-size: 1.1em; font-weight: bold">Monster Attacks</div>
+                                    <div class="sheet-col-12-17 sheet-ability-text sheet-vert-middle" style="font-size: 1.1em; font-weight: bold">Monster Angriffe</div>
 
                                 </div>
 
                                 <div class="sheet-col-12-17">
 
-                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_monsterNumAttacks" title="The Number of Monster Attacks"><br/></div>
+                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_monsterNumAttacks" title="Anzahl der Monster Angriffe"><br/></div>
 
                                 </div>
 
@@ -3976,9 +3976,9 @@
 
                                     <div style="display: table-cell;width:420px;">
 
-                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterwpnname" class="sheet-inMainTxt" placeholder="Weapon Name / attack" />
+                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterwpnname" class="sheet-inMainTxt" placeholder="Waffenname / Angriff" />
 
-                                        &nbsp;&nbsp;1d20+
+                                        &nbsp;&nbsp;1W20+
 
                                         <input type="number" name="attr_Monsterattack-bonus" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Angiffsbonus" placeholder="0" value="0" />
 
@@ -3986,17 +3986,17 @@
 
                                     <div style="display: table-cell; text-align: right;">
 
-                                        <b>Damage:&nbsp;</b>
+                                        <b>Schaden:&nbsp;</b>
 
-                                        <input type="number" name="attr_Monsterattack-number-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Number of Dice" placeholder="1" value="1" />
+                                        <input type="number" name="attr_Monsterattack-number-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Anzahl der Würfel" placeholder="1" value="1" />
 
-                                        <b>D</b>
+                                        <b>W</b>
 
-                                        <input type="number" name="attr_Monsterattack-damage-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Damage Die" placeholder="6" value="6" />
+                                        <input type="number" name="attr_Monsterattack-damage-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Schadenswürfel" placeholder="6" value="6" />
 
                                         +
 
-                                        <input type="number" name="attr_Monsterattack-damage-bonus" class="sheet-inMainNum"  style="width: 45px; font-size: 1.1em; font-weight: bold" title="Damage roll bonus" placeholder="0" value="0" />
+                                        <input type="number" name="attr_Monsterattack-damage-bonus" class="sheet-inMainNum"  style="width: 45px; font-size: 1.1em; font-weight: bold" title="Schadensbonus" placeholder="0" value="0" />
 
                                     </div>
 
@@ -4024,7 +4024,7 @@
 
                                 <div style="display: table-cell;width:inherit;">
 
-                                    <div  class="sheet-title1">MONSTER ABILITIES</div>
+                                    <div  class="sheet-title1">MONSTER FÄHIGKEITEN</div>
 
                                 </div>
 
@@ -4052,13 +4052,13 @@
 
                                     <div style="display: table-cell;width:420px;">
 
-                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterabilityname" class="sheet-inMainTxt" placeholder="Ability Name" />
+                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterabilityname" class="sheet-inMainTxt" placeholder="Fähigkeitenname" />
 
                                     </div>
 
                                     <div style="display: table-cell; text-align: right; border-width: 2px 2px 2px 2px; border-color: black; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-bottom-style: solid;">
 
-                                        <textarea name="attr_Monsterability-text" class="sheet-inMainTxt" style="width: 420px; height: 75px; font-size: 14px; font-weight: bold" title="Ability Text" placeholder="Insert ability text here"></textarea>
+                                        <textarea name="attr_Monsterability-text" class="sheet-inMainTxt" style="width: 420px; height: 75px; font-size: 14px; font-weight: bold" title="Ability Text" placeholder="Infos zur Fähigkeit hier eintragen"></textarea>
 
                                     </div>
 
@@ -4082,51 +4082,51 @@
 
                                 <div class="sheet-col-1">
 
-                                    <div class="sheet-title1">MONSTER SPELLS</div>
+                                    <div class="sheet-title1">MONSTER ZAUBER</div>
 
-                                        <div class="sheet-col-1 sheet-left sheet-tdlabelsmall">Number of Spells by Level</div>
+                                        <div class="sheet-col-1 sheet-left sheet-tdlabelsmall">Anzahl Zauber pro Stufe</div>
 
                                             <table>
 
                                                 <tr>
 
-                                                    <td class="tdlabelsmall">1st</td>
+                                                    <td class="tdlabelsmall">1.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl1Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">2nd</td>
+                                                    <td class="tdlabelsmall">2.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl2Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">3rd</td>
+                                                    <td class="tdlabelsmall">3.</td>
 
                                                     <td><input type= "number"  class="sminput" name="attr_monsterLvl3Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">4th</td>
+                                                    <td class="tdlabelsmall">4.</td>
 
                                                     <td><input type= "number"  class="sminput" name="attr_monsterLvl4Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">5th</td>
+                                                    <td class="tdlabelsmall">5.</td>
 
                                                     <td><input type= "number"  class="sminput" name="attr_monsterLvl5Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">6th</td>
+                                                    <td class="tdlabelsmall">6.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl6Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">7th</td>
+                                                    <td class="tdlabelsmall">7.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl7Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">8th</td>
+                                                    <td class="tdlabelsmall">8.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl8Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">9th</td>
+                                                    <td class="tdlabelsmall">9.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl9Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">10th</td>
+                                                    <td class="tdlabelsmall">10.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl10Spells"></td>
 
@@ -4142,17 +4142,17 @@
 
                                         <div class="sheet-col-1-23 sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
-                                        <div class="sheet-col-1-14 sheet-small-label sheet-vert-bottom">Lvl</div>
+                                        <div class="sheet-col-1-14 sheet-small-label sheet-vert-bottom">Stufe</div>
 
-                                        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Spell Name</div>
+                                        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Zaubername</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Rng</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Rw</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dur.</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dau.</div>
 
-                                        <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Spell Effect</div>
+                                        <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Zaubereffekt</div>
 
-                                        <div class="sheet-col-1-21 sheet-center sheet-small-label sheet-vert-bottom">Prepared</div>
+                                        <div class="sheet-col-1-21 sheet-center sheet-small-label sheet-vert-bottom">Vorbereitet</div>
 
                                     </div>
 
@@ -4166,9 +4166,9 @@
 
                                         <div class="sheet-col-1-3"></div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(feet)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Ellen)</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(turns)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Runden)</div>
 
                                         <div class="sheet-col-7-23"></div>
 
@@ -4188,31 +4188,31 @@
 
                                                 <div class="sheet-col-1-23 sheet-vert-middle sheet-left">
 
-                                                    <button type="roll" class="sheet-roll sheet-vert-middle" name="roll_monsterSpellCheck" title="Cast Spell"
+                                                    <button type="roll" class="sheet-roll sheet-vert-middle" name="roll_monsterSpellCheck" title="Zauber wirken"
 
                                                     value="&{template:odnd} {{spell=1}} {{name=@{character_name}}} {{title=@{monsterSpellName}}} {{spellcasting=1}} {{spellshowinfoblock=1}} {{spelllevel=@{monsterSpellLevel}}} {{spellrange=@{monsterSpellRange}}} {{spellduration=@{monsterSpellDuration}}} {{spellshowdesc=@{monsterSpellEffect} }}" ></button>
 
                                                 </div>
 
-                                                <div class="sheet-col-1-14 sheet-vert-middle sheet-center"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellLevel" title="Spell Level"></div>
+                                                <div class="sheet-col-1-14 sheet-vert-middle sheet-center"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellLevel" title="Zauberstufe"></div>
 
-                                                <div class="sheet-col-1-3 sheet-vert-middle"><input type="text" class="sheet-inMainTxt" name="attr_monsterSpellName" placeholder="Spell Name"></div>
+                                                <div class="sheet-col-1-3 sheet-vert-middle"><input type="text" class="sheet-inMainTxt" name="attr_monsterSpellName" placeholder="Zaubername"></div>
 
-                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellRange" title="Spell Range"></div>
+                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellRange" title="Zauber Rw"></div>
 
-                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellDuration" title="Spell Duration"></div>
+                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellDuration" title="Dauer d. Zauber"></div>
 
-                                                <div class="sheet-col-7-23 sheet-small-label sheet-vert-middle"><textarea class="sheet-MEDwidthSMheight" name="attr_monsterSpellEffect" placeholder="Spell Effect"></textarea></div>
+                                                <div class="sheet-col-7-23 sheet-small-label sheet-vert-middle"><textarea class="sheet-MEDwidthSMheight" name="attr_monsterSpellEffect" placeholder="Zaubereffekt"></textarea></div>
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared1" title="Prepared once" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared1" title="1x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared2" title="Prepared twice" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared2" title="2x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared3" title="Prepared thrice" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared3" title="3x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared4" title="Prepared four" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared4" title="4x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared5" title="Prepared five" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared5" title="5x vorbereitet" />
 
                                             </div>
 
@@ -4244,7 +4244,7 @@
 
                         <div class="sheet-col-1-1"> <!-- Notes -->
 
-                             <div class="sheet-title1 sheet-center">MONSTER NOTES</div>
+                             <div class="sheet-title1 sheet-center">MONSTER NOTIZEN</div>
 
                         </div>
 
@@ -5196,3 +5196,4 @@
     });
 
 </script>
+
