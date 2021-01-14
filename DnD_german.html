@@ -11,7 +11,7 @@
 
     <!-- PC / MONSTER TABS -->
 
-    <!--<input class="sheet-is-monster" type="checkbox" name="attr_is_monster" value="1"><span class="sheet-is-monster-tab"></span>-->
+    <!-- <input class="sheet-is-monster" type="checkbox" name="attr_is_monster" value="1"><span class="sheet-is-monster-tab"></span> -->
 
     <!-- 3 way toggle - STYLE 2 -->
 
@@ -23,9 +23,9 @@
 
     <span class="sheet-maintab sheet-player">Charakterbogen</span>
 
-    <!-- <input type="radio" name="attr_maintab" class="sheet-maintab sheet-monster" value="4" title="Monsterbogen" />
+    <input type="radio" name="attr_maintab" class="sheet-maintab sheet-monster" value="4" title="Monsterbogen" />
 
-    <span class="sheet-maintab sheet-monster">Monsterbogen</span> -->
+    <span class="sheet-maintab sheet-monster">Monster-/NSC-bogen</span>
 
     <!--SETTINGS -->
 
@@ -201,7 +201,7 @@
 
                                     <div class="sheet-col-1-12 sheet-left" title="Wähle hier deinen Trefferwürfel">
 									<!-- <input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_HPDie" value="W6"<br/> -->
-									<SELECT class="inSmallNum" type="text" name="attr_HPDie">
+									<SELECT class="inSmallNumm" type="text" name="attr_HPDie">
 
                                         <option value="d4">W4</option>
 
@@ -318,7 +318,7 @@
 
                                 </div>
 
-                                <div class="sheet-col-6-23 sheet-ability-lib sheet-vert-middle">GESCHICKLICHKEIT</div>
+                                <div class="sheet-col-6-23 sheet-ability-lib sheet-vert-middle">GESCHICK.</div>
 
                                 <div class="sheet-col-1-11 sheet-ability-mod sheet-vert-middle"><input name="attr_MOD_DEX" type="number" class="sheet-ability-mod" value="(round(@{DEX}*@{DEX}*@{DEX}*0.002831-@{DEX}*@{DEX}*0.08918+1.164*@{DEX}-5.667))" disabled="disabled"/></div>
 
@@ -326,7 +326,8 @@
 
                                 <input type="hidden" name="attr_INIT_bonus" value="[[round((@{MOD_DEX}/1.5))]]">
 
-                                <div class="sheet-col-1-16 sheet-vert-middle"><button type='roll' value="&{template:odnd} {{name=@{name}}} {{title=Initiative}} {{INIT=[[1d6 + @{INIT_bonus}[DEX] + @{Quick_Halfling}[HALFLING] &{tracker}]]}}" name='Initiative' title="Initiative"></button></div>
+                                <!-- <div class="sheet-col-1-16 sheet-vert-middle"><button type='roll' value="&{template:odnd} {{name=@{name}}} {{title=Initiative}} {{INIT=[[1d6 + @{INIT_bonus}[DEX] + @{Quick_Halfling}[HALFLING] &{tracker}]]}}" name='Initiative' title="Initiative"></button></div> -->
+                                <div class="sheet-col-1-16 sheet-vert-middle"><button type='roll' value="&{template:odnd} {{name=@{name}}} {{title=Initiative}} {{INIT=[[1d6 + @{Quick_Halfling}[HALFLING] &{tracker}]]}}" name='Initiative' title="Initiative"></button></div>
 
                             </div> <!-- END DEX -->
 
@@ -370,7 +371,7 @@
 
                                 <div class="sheet-col-1-12 sheet-vert-middle">
 
-                                    <SELECT class="inSmallNum" name="attr_retainermorale_CHA" title="Moral von Gefolgsleuten">
+                                    <SELECT class="inSmallNum" width="40px" name="attr_retainermorale_CHA" title="Moral von Gefolgsleuten">
 
                                         <option value="4">4</option>
 
@@ -638,23 +639,178 @@
 
                         <!-- MELEE -->
 
-                            <div class="sheet-melee">
+                    <div class="sheet-melee">
 
-                                <div class="sheet-row sheet-sub-header">
+                    <div class="sheet-col-6-17 sheet-ability-text sheet-vert-middle">Waffenmeisterschaft</div>
+
+                    <div class="sheet-row sheet-sub-header">
+
+                        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Waffe</div>
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">Grad</div>
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11 sheet-center sheet-small-label sheet-vert-bottom">Treffer-<br>bonus</div>
+
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11 sheet-center sheet-small-label sheet-vert-bottom">Schadens-<br>bonus</div>
+
+                    </div>
+
+                    <!-- BEGIN melee weapon mastery row 1-->
+
+                    <div class="sheet-row">
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Nahkampfwaffe" name="attr_MeleeWeaponNameMastery1"></div>
+
+                        <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                            <SELECT class="inSmallText" type="text" name="attr_WeaponMaster1">
+
+                                <option value="Unausgebildet">Unausgebildet</option>
+
+                                <option value="Basis"selected>Basis</option>
+
+                                <option value="Geübt">Geübt</option>
+
+                                <option value="Experte">Experte</option>
+
+                                <option value="Meister">Meister</option>
+
+                                <option value="Großmeister">Großmeister</option>
+
+                            </SELECT></div>
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeWMToHit1" value="0"<br/></div>
+
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeDmg_WM1" value="0"<br/></div>
+
+                    </div>
+                    <!-- END melee weapon mastery row 1-->
+                    <!-- BEGIN melee weapon mastery row 2-->
+
+                    <div class="sheet-row">
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Nahkampfwaffe" name="attr_MeleeWeaponNameMastery2"></div>
+
+                        <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                            <SELECT class="inSmallText" type="text" name="attr_WeaponMaster2">
+
+                                <option value="Unausgebildet">Unausgebildet</option>
+
+                                <option value="Basis"selected>Basis</option>
+
+                                <option value="Geübt">Geübt</option>
+
+                                <option value="Experte">Experte</option>
+
+                                <option value="Meister">Meister</option>
+
+                                <option value="Großmeister">Großmeister</option>
+
+                            </SELECT></div>
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeWMToHit2" value="0"<br/></div>
+
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeDmg_WM2" value="0"<br/></div>
+
+                    </div>
+                    <!-- END melee weapon mastery row 2-->
+                    <!-- BEGIN melee weapon mastery row 3-->
+
+                    <div class="sheet-row">
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Nahkampfwaffe" name="attr_MeleeWeaponNameMastery3"></div>
+
+                        <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                            <SELECT class="inSmallText" type="text" name="attr_WeaponMaster3">
+
+                                <option value="Unausgebildet">Unausgebildet</option>
+
+                                <option value="Basis"selected>Basis</option>
+
+                                <option value="Geübt">Geübt</option>
+
+                                <option value="Experte">Experte</option>
+
+                                <option value="Meister">Meister</option>
+
+                                <option value="Großmeister">Großmeister</option>
+
+                            </SELECT></div>
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeWMToHit3" value="0"<br/></div>
+
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeDmg_WM3" value="0"<br/></div>
+
+                    </div>
+                    <!-- END melee weapon mastery row 3-->
+                    <!-- BEGIN melee weapon mastery row 4-->
+
+                    <div class="sheet-row">
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Nahkampfwaffe" name="attr_MeleeWeaponNameMastery4"></div>
+
+                        <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                            <SELECT class="inSmallText" type="text" name="attr_WeaponMaster4">
+
+                                <option value="Unausgebildet">Unausgebildet</option>
+
+                                <option value="Basis"selected>Basis</option>
+
+                                <option value="Geübt">Geübt</option>
+
+                                <option value="Experte">Experte</option>
+
+                                <option value="Meister">Meister</option>
+
+                                <option value="Großmeister">Großmeister</option>
+
+                            </SELECT></div>
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeWMToHit4" value="0"<br/></div>
+
+                        <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                        <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MeleeDmg_WM4" value="0"<br/></div>
+
+                    </div><br>
+                    <!-- END melee weapon mastery row 4-->
+
+                    <div class="sheet-row sheet-sub-header">
 
                                     <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
 
                                     <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Waffe</div>
 
-                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">Magischer Bonus</div>
+                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">Magie Bonus</div>
 
-                                    <div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Gesamt Trefferbonus</div>
+                                    <div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">∑ Treffer.</div>
 
                                     <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
 
-                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Schadenswürfel</div>
+                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Würfel</div>
 
-                                    <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Gesamt Schadensbonus</div>
+                                    <div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">∑ Schaden</div>
 
                                 </div>
 
@@ -666,7 +822,7 @@
 
                                     <div class="sheet-col-1-15">
 
-                                        <button type='roll' name="Attack_@{MeleeWeaponName1}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName1}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit1}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die1}+@{MeleeDmg_Bonus1}]]}}"></button>
+                                        <button type='roll' name="Attack_@{MeleeWeaponName1}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName1}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit1}[Bonus] + (@{MeleeWMToHit1}[Bonus]) + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die1}+@{MeleeDmg_Bonus1}+@{MeleeDmg_WM1}]]}}"></button>
 
                                     </div>
 
@@ -676,7 +832,7 @@
 
                                     <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
 
-                                    <div class="sheet-col-1-9" title="Dein gesamter Bonus für ETW0 (Stärkebonus + Magiebonus)" ><input class="inSmallNum_noBorder" type="number" name="attr_MeleeToHit1" value="[[[[@{MOD_STR}]] + @{MeleeMagic1}]]" disabled="disabled"></div>
+                                    <div class="sheet-col-1-9" title="Dein gesamter Bonus für ETW0 (Stärkebonus + Magiebonus + Waffenmeisterschaft)" ><input class="inSmallNum_noBorder" type="number" name="attr_MeleeToHit1" value="[[[[@{MOD_STR}]] + @{MeleeMagic1}]]" disabled="disabled"></div>
 
                                     <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
 
@@ -696,7 +852,7 @@
 
                                     <div class="sheet-col-1-15">
 
-                                        <button type='roll' name="Attack_@{MeleeWeaponName2}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName2}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit2}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die2}+@{MeleeDmg_Bonus2}]]}}"></button>
+                                      <button type='roll' name="Attack_@{MeleeWeaponName2}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName2}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit2}[Bonus] + (@{MeleeWMToHit2}[Bonus]) + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die1}+@{MeleeDmg_Bonus2}+@{MeleeDmg_WM2}]]}}"></button>
 
                                     </div>
 
@@ -726,7 +882,7 @@
 
                                     <div class="sheet-col-1-15">
 
-                                        <button type='roll' name="Attack_@{MeleeWeaponName3}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName3}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit3}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die3}+@{MeleeDmg_Bonus3}]]}}"></button>
+                                      <button type='roll' name="Attack_@{MeleeWeaponName3}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName3}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit3}[Bonus] + (@{MeleeWMToHit3}[Bonus]) + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die3}+@{MeleeDmg_Bonus3}+@{MeleeDmg_WM3}]]}}"></button>
 
                                     </div>
 
@@ -756,7 +912,7 @@
 
                                     <div class="sheet-col-1-15">
 
-                                        <button type='roll' name="Attack_@{MeleeWeaponName4}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName4}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit4}[Bonus] + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die4}+@{MeleeDmg_Bonus4}]]}}"></button>
+                                      <button type='roll' name="Attack_@{MeleeWeaponName4}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MeleeWeaponName4}}} {{attack=[[ @{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MeleeToHit4}[Bonus] + (@{MeleeWMToHit4}[Bonus]) + (?{Bonus/Minus|0})[ADD'L BONUS]) ]] }} {{damage=[[@{MeleeDmg_Die4}+@{MeleeDmg_Bonus4}+@{MeleeDmg_WM4}]]}}"></button>
 
                                     </div>
 
@@ -788,7 +944,160 @@
 
                             <div class="sheet-missile">
 
+                              <div class="sheet-col-6-17 sheet-ability-text sheet-vert-middle">Waffenmeisterschaft</div>
 
+                              <div class="sheet-row sheet-sub-header">
+
+                                  <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Waffe</div>
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">Grad</div>
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11 sheet-center sheet-small-label sheet-vert-bottom">Treffer-<br>bonus</div>
+
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11 sheet-center sheet-small-label sheet-vert-bottom">Schadens-<br>bonus</div>
+
+                              </div>
+
+                              <!-- BEGIN range weapon mastery row 1-->
+
+                              <div class="sheet-row">
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Fernkampfwaffe" name="attr_MissileWeaponNameMastery1"></div>
+
+                                  <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                                      <SELECT class="inSmallText" type="text" name="attr_MissileWeaponMaster1">
+
+                                          <option value="Unausgebildet">Unausgebildet</option>
+
+                                          <option value="Basis"selected>Basis</option>
+
+                                          <option value="Geübt">Geübt</option>
+
+                                          <option value="Experte">Experte</option>
+
+                                          <option value="Meister">Meister</option>
+
+                                          <option value="Großmeister">Großmeister</option>
+
+                                      </SELECT></div>
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileWMToHit1" value="0"<br/></div>
+
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileDmg_WM1" value="0"<br/></div>
+
+                              </div>
+                              <!-- END range weapon mastery row 1-->
+                              <!-- BEGIN range weapon mastery row 2-->
+
+                              <div class="sheet-row">
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Fernkampfwaffe" name="attr_MissileWeaponNameMastery2"></div>
+
+                                  <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                                      <SELECT class="inSmallText" type="text" name="attr_MissileWeaponMaster2">
+
+                                          <option value="Unausgebildet">Unausgebildet</option>
+
+                                          <option value="Basis"selected>Basis</option>
+
+                                          <option value="Geübt">Geübt</option>
+
+                                          <option value="Experte">Experte</option>
+
+                                          <option value="Meister">Meister</option>
+
+                                          <option value="Großmeister">Großmeister</option>
+
+                                      </SELECT></div>
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileWMToHit2" value="0"<br/></div>
+
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileDmg_WM2" value="0"<br/></div>
+
+                              </div>
+                              <!-- END range weapon mastery row 2-->
+                              <!-- BEGIN range weapon mastery row 3-->
+
+                              <div class="sheet-row">
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Fernkampfwaffe" name="attr_MissileWeaponNameMastery3"></div>
+
+                                  <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                                      <SELECT class="inSmallText" type="text" name="attr_MissileWeaponMaster3">
+
+                                          <option value="Unausgebildet">Unausgebildet</option>
+
+                                          <option value="Basis"selected>Basis</option>
+
+                                          <option value="Geübt">Geübt</option>
+
+                                          <option value="Experte">Experte</option>
+
+                                          <option value="Meister">Meister</option>
+
+                                          <option value="Großmeister">Großmeister</option>
+
+                                      </SELECT></div>
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileWMToHit3" value="0"<br/></div>
+
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileDmg_WM3" value="0"<br/></div>
+
+                              </div>
+                              <!-- END range weapon mastery row 3-->
+                              <!-- BEGIN range weapon mastery row 4-->
+
+                              <div class="sheet-row">
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-3"><input class="inMainTxt" type="text" placeholder="Fernkampfwaffe" name="attr_MissileWeaponNameMastery4"></div>
+
+                                  <div class="sheet-col-1-9 sheet-left" title="Wähle hier deine Waffenmeisterschaft">
+
+                                      <SELECT class="inSmallText" type="text" name="attr_MissileWeaponMaster4">
+
+                                          <option value="Unausgebildet">Unausgebildet</option>
+
+                                          <option value="Basis"selected>Basis</option>
+
+                                          <option value="Geübt">Geübt</option>
+
+                                          <option value="Experte">Experte</option>
+
+                                          <option value="Meister">Meister</option>
+
+                                          <option value="Großmeister">Großmeister</option>
+
+                                      </SELECT></div>
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Bonus für ETW0 durch die Waffenmeisterschaft" ><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileWMToHit4" value="0"<br/></div>
+
+                                  <div class="sheet-col-1-24 sheet-center sheet-vert-bottom">&nbsp;</div>
+
+                                  <div class="sheet-col-1-11" title="Dein Schadensbonus durch die Waffenmeisterschaft"><input class="sheet-inSmallNum_noBorder sheet-center" type="text" name="attr_MissileDmg_WM4" value="0"<br/></div>
+
+                              </div><br>
+                              <!-- END range weapon mastery row 4-->
 
                                 <div class="sheet-row sheet-sub-header">
 
@@ -798,17 +1107,17 @@
 
                                     <div class="sheet-col-1-4 sheet-center sheet-small-label sheet-vert-bottom">Waffe</div>
 
-                                    <div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Reichweite (K/M/L)</div>
+                                    <div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Reichw. (K/M/L)</div>
 
-                                    <div class="sheet-col-1-9 sheet-center sheet-small-label sheet-vert-bottom">Reichweite zum Ziel</div>
+                                    <div class="sheet-col-1-9 sheet-center sheet-small-label sheet-vert-bottom">Reichw. Ziel</div>
 
-                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Magiebonus</div>
+                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Magie</div>
 
-                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Gesamt Trefferbonus</div>
+                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">∑ Treffen</div>
 
-                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Schadenswürfel</div>
+                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Würfel</div>
 
-                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Gesamt Schadensbonus</div>
+                                    <div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">∑ Schaden</div>
 
                                 </div>
 
@@ -820,7 +1129,7 @@
 
                                     <div class="sheet-col-1-24">
 
-                                        <button type='roll' name="Attack_@{MissileWeaponName1}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName1} \n @{RangedDistance1}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit1}[Bonus] + @{Missile_Halfling}[Halfling] + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die1}+@{MissileDmg_Bonus1}]]}}"></button>
+                                        <button type='roll' name="Attack_@{MissileWeaponName1}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName1} \n @{RangedDistance1}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit1}[Bonus] + @{Missile_Halfling}[Halfling] + (@{MissileWMToHit1}) + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die1}+@{MissileDmg_Bonus1}+@{MissileDmg_WM1}]]}}"></button>
 
                                     </div>
 
@@ -864,7 +1173,7 @@
 
                                     <div class="sheet-col-1-24">
 
-                                        <button type='roll' name="Attack_@{MissileWeaponName2}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName2} \n @{RangedDistance2}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit2}[Bonus] + @{Missile_Halfling}[Halfling] + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die2}+@{MissileDmg_Bonus2}]]}}"></button>
+                                      <button type='roll' name="Attack_@{MissileWeaponName2}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName2} \n @{RangedDistance2}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit2}[Bonus] + @{Missile_Halfling}[Halfling] + (@{MissileWMToHit2}) + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die2}+@{MissileDmg_Bonus2}+@{MissileDmg_WM2}]]}}"></button>
 
                                     </div>
 
@@ -908,7 +1217,7 @@
 
                                     <div class="sheet-col-1-24">
 
-                                        <button type='roll' name="Attack_@{MissileWeaponName3}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName3} \n @{RangedDistance3}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit3}[Bonus] + @{Missile_Halfling}[Halfling] + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die3}+@{MissileDmg_Bonus3}]]}}"></button>
+                                      <button type='roll' name="Attack_@{MissileWeaponName3}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName3} \n @{RangedDistance3}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit3}[Bonus] + @{Missile_Halfling}[Halfling] + (@{MissileWMToHit3}) + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die3}+@{MissileDmg_Bonus3}+@{MissileDmg_WM3}]]}}"></button>
 
                                     </div>
 
@@ -952,7 +1261,7 @@
 
                                     <div class="sheet-col-1-24">
 
-                                        <button type='roll' name="Attack_@{MissileWeaponName4}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName4} \n @{RangedDistance4}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit4}[Bonus] + @{Missile_Halfling}[Halfling] + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die4}+@{MissileDmg_Bonus4}]]}}"></button>
+                                      <button type='roll' name="Attack_@{MissileWeaponName4}" value="&{template:odnd} {{combat=1}} {{name=@{Name}}} {{title=@{MissileWeaponName4} \n @{RangedDistance4}}} {{rangedattack=[[@{HitAC0}[THAC0] - (@{toHitRoll}[Dice Roll] + @{MissileToHit4}[Bonus] + @{Missile_Halfling}[Halfling] + (@{MissileWMToHit4}) + (?{Bonus/Minus|0})[ADD'L BONUS])]]}} {{damage=[[@{MissileDmg_Die4}+@{MissileDmg_Bonus4}+@{MissileDmg_WM4}]]}}"></button>
 
                                     </div>
 
@@ -962,7 +1271,7 @@
 
                                     <div class="sheet-col-1-7"><input class="inMainTxt" style="margin-left: 8px; width: 90px" placeholder="0/0/0" type="text" name="attr_RangedDistance4"></div>
 
-                                    <div class="sheet-col-1-9" title="Choose the distance to your Target">
+                                    <div class="sheet-col-1-9" title="Wähle die Distanz zum Ziel">
 
                                         <select name="attr_RangeToTarget4" style="text-align: center; width: 80px;">
 
@@ -1160,7 +1469,7 @@
 
                                         <div class="sheet-col-1-3">
 
-                                            <button type='roll' name="Aktion: Untote vertreiben" value="&{template:odnd} {{class=1}} {{name=@{Name}}} {{title=@{TurnUndead-name}}} {{flavortext=You hold up the Holy Symbol of}} {{deity=@{clericDeity} }} {{turnundead=[[@{TurnUndead-die}]]}} {{numberturned=[[@{TurnUndead-die}]]}}"></button>
+                                            <button type='roll' name="Aktion: Untote vertreiben" value="&{template:odnd} {{class=1}} {{name=@{Name}}} {{title=@{TurnUndead-name}}} {{flavortext=Du hälst dein Heiliges Symbol in die Höhe}} {{deity=@{clericDeity} }} {{turnundead=[[@{TurnUndead-die}]]}} {{numberturned=[[@{TurnUndead-die}]]}}"></button>
 
                                             <div class="sheet-col-1-6"><input style="width:170px;" type="text" name="attr_TurnUndead-name" class="sheet-inMainTxt" value="Untote vertreiben" disabled="disabled"/></div>
 
@@ -1193,6 +1502,218 @@
                                             <li><b>Zauber wirken :</b> Kann Zaubersprüche ab Stufe 2 wirken<br/></li>
 
                                             <li><b>Untote vertreiben :</b> Kann verschiedene untote Lebewesen vertreiben<br/></li>
+                                            <ul>
+                                              <li>
+                                                  <div class="sheet-col-7-15 sheet-center">Skelett</div>
+                                                  <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                  <div class="sheet-col-6-17 sheet-center sheet-small-label">
+                                                  <SELECT class="inSmallNum" type="text" name="attr_Skelett">
+                                                                    <option value="-"selected>-</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="9">9</option>
+                                                                    <option value="11">11</option>
+                                                                    <option value="V">V</option>
+                                                                    <option value="Z">Z</option>
+                                                                    <option value="Z+">Z+</option>
+                                                                    <option value="Z*">Z*</option>
+                            									            </SELECT><br/></div>
+                                                </li>
+                                                <li>
+                                                  <div class="sheet-col-7-15 sheet-center">Zombie</div>
+                                                  <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                  <div class="sheet-col-6-17 sheet-center">
+                                                  <SELECT class="inSmallNum" type="text" name="attr_Zombie">
+                                                                      <option value="-"selected>-</option>
+                                                                      <option value="7">7</option>
+                                                                      <option value="9">9</option>
+                                                                      <option value="11">11</option>
+                                                                      <option value="V">V</option>
+                                                                      <option value="Z">Z</option>
+                                                                      <option value="Z+">Z+</option>
+                                                                      <option value="Z*">Z*</option>
+                              									            </SELECT><br/></div>
+                                                  </li>
+                                                  <li>
+                                                    <div class="sheet-col-7-15 sheet-center">Ghul</div>
+                                                    <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                    <div class="sheet-col-6-17 sheet-center">
+                                                    <SELECT class="inSmallNum" type="text" name="attr_Ghul">
+                                                                        <option value="-"selected>-</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="11">11</option>
+                                                                        <option value="V">V</option>
+                                                                        <option value="Z">Z</option>
+                                                                        <option value="Z+">Z+</option>
+                                                                        <option value="Z*">Z*</option>
+                                									            </SELECT><br/></div>
+                                                    </li>
+                                                    <li>
+                                                      <div class="sheet-col-7-15 sheet-center">Gruftbewohner</div>
+                                                      <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                      <div class="sheet-col-6-17 sheet-center">
+                                                      <SELECT class="inSmallNum" type="text" name="attr_Gruftbewohner">
+                                                                          <option value="-"selected>-</option>
+                                                                          <option value="7">7</option>
+                                                                          <option value="9">9</option>
+                                                                          <option value="11">11</option>
+                                                                          <option value="V">V</option>
+                                                                          <option value="Z">Z</option>
+                                                                          <option value="Z+">Z+</option>
+                                                                          <option value="Z*">Z*</option>
+                                  									            </SELECT><br/></div>
+                                                      </li>
+                                                      <li>
+                                                        <div class="sheet-col-7-15 sheet-center">Todesalb</div>
+                                                        <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                        <div class="sheet-col-6-17 sheet-center">
+                                                        <SELECT class="inSmallNum" type="text" name="attr_Todesalb">
+                                                                            <option value="-"selected>-</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="11">11</option>
+                                                                            <option value="V">V</option>
+                                                                            <option value="Z">Z</option>
+                                                                            <option value="Z+">Z+</option>
+                                                                            <option value="Z*">Z*</option>
+                                    									            </SELECT><br/></div>
+                                                        </li>
+                                                        <li>
+                                                          <div class="sheet-col-7-15 sheet-center">Munmie</div>
+                                                          <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                          <div class="sheet-col-6-17 sheet-center">
+                                                          <SELECT class="inSmallNum" type="text" name="attr_Mumie">
+                                                                              <option value="-"selected>-</option>
+                                                                              <option value="7">7</option>
+                                                                              <option value="9">9</option>
+                                                                              <option value="11">11</option>
+                                                                              <option value="V">V</option>
+                                                                              <option value="Z">Z</option>
+                                                                              <option value="Z+">Z+</option>
+                                                                              <option value="Z*">Z*</option>
+                                      									            </SELECT><br/></div>
+                                                          </li>
+                                                          <li>
+                                                            <div class="sheet-col-7-15 sheet-center">Schreckgespenst</div>
+                                                            <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                            <div class="sheet-col-6-17 sheet-center">
+                                                            <SELECT class="inSmallNum" type="text" name="attr_Schreckgespenst">
+                                                                                <option value="-"selected>-</option>
+                                                                                <option value="7">7</option>
+                                                                                <option value="9">9</option>
+                                                                                <option value="11">11</option>
+                                                                                <option value="V">V</option>
+                                                                                <option value="Z">Z</option>
+                                                                                <option value="Z+">Z+</option>
+                                                                                <option value="Z*">Z*</option>
+                                        									            </SELECT><br/></div>
+                                                            </li>
+                                                            <li>
+                                                              <div class="sheet-col-7-15 sheet-center">Vampir</div>
+                                                              <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                              <div class="sheet-col-6-17 sheet-center">
+                                                                                  <SELECT class="inSmallNum" type="text" name="attr_Vampir">
+                                                                                  <option value="-"selected>-</option>
+                                                                                  <option value="7">7</option>
+                                                                                  <option value="9">9</option>
+                                                                                  <option value="11">11</option>
+                                                                                  <option value="V">V</option>
+                                                                                  <option value="Z">Z</option>
+                                                                                  <option value="Z+">Z+</option>
+                                                                                  <option value="Z*">Z*</option>
+                                          									            </SELECT><br/></div>
+                                                              </li>
+                                                              <li>
+                                                                <div class="sheet-col-7-15 sheet-center">Phantom</div>
+                                                                <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                                <div class="sheet-col-6-17 sheet-center">
+                                                                <SELECT class="inSmallNum" type="text" name="attr_Phantom">
+                                                                                    <option value="-"selected>-</option>
+                                                                                    <option value="7">7</option>
+                                                                                    <option value="9">9</option>
+                                                                                    <option value="11">11</option>
+                                                                                    <option value="V">V</option>
+                                                                                    <option value="Z">Z</option>
+                                                                                    <option value="Z+">Z+</option>
+                                                                                    <option value="Z*">Z*</option>
+                                            									            </SELECT><br/></div>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="sheet-col-7-15 sheet-center">Spuk</div>
+                                                                  <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                                  <div class="sheet-col-6-17 sheet-center">
+                                                                  <SELECT class="inSmallNum" type="text" name="attr_Spuk">
+                                                                                      <option value="-"selected>-</option>
+                                                                                      <option value="7">7</option>
+                                                                                      <option value="9">9</option>
+                                                                                      <option value="11">11</option>
+                                                                                      <option value="V">V</option>
+                                                                                      <option value="Z">Z</option>
+                                                                                      <option value="Z+">Z+</option>
+                                                                                      <option value="Z*">Z*</option>
+                                              									            </SELECT><br/></div>
+                                                                  </li>
+                                                                  <li>
+                                                                    <div class="sheet-col-7-15 sheet-center">Geist</div>
+                                                                    <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                                    <div class="sheet-col-6-17 sheet-center">
+                                                                    <SELECT class="inSmallNum" type="text" name="attr_Geist">
+                                                                                        <option value="-"selected>-</option>
+                                                                                        <option value="7">7</option>
+                                                                                        <option value="9">9</option>
+                                                                                        <option value="11">11</option>
+                                                                                        <option value="V">V</option>
+                                                                                        <option value="Z">Z</option>
+                                                                                        <option value="Z+">Z+</option>
+                                                                                        <option value="Z*">Z*</option>
+                                                									            </SELECT><br/></div>
+                                                                    </li>
+                                                                    <li>
+                                                                      <div class="sheet-col-7-15 sheet-center">Nachtschatten</div>
+                                                                      <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                                      <div class="sheet-col-6-17 sheet-center">
+                                                                      <SELECT class="inSmallNum" type="text" name="attr_Nachtschatten">
+                                                                                          <option value="-"selected>-</option>
+                                                                                          <option value="7">7</option>
+                                                                                          <option value="9">9</option>
+                                                                                          <option value="11">11</option>
+                                                                                          <option value="V">V</option>
+                                                                                          <option value="Z">Z</option>
+                                                                                          <option value="Z+">Z+</option>
+                                                                                          <option value="Z*">Z*</option>
+                                                  									            </SELECT><br/></div>
+                                                                      </li>
+                                                                      <li>
+                                                                        <div class="sheet-col-7-15 sheet-center">Lich</div>
+                                                                        <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                                        <div class="sheet-col-6-17 sheet-center">
+                                                                        <SELECT class="inSmallNum" type="text" name="attr_Lich">
+                                                                                            <option value="-"selected>-</option>
+                                                                                            <option value="7">7</option>
+                                                                                            <option value="9">9</option>
+                                                                                            <option value="11">11</option>
+                                                                                            <option value="V">V</option>
+                                                                                            <option value="Z">Z</option>
+                                                                                            <option value="Z+">Z+</option>
+                                                                                            <option value="Z*">Z*</option>
+                                                    									            </SELECT><br/></div>
+                                                                        </li>
+                                                                        <li>
+                                                                          <div class="sheet-col-7-15 sheet-center">Speziell</div>
+                                                                          <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
+                                                                          <div class="sheet-col-6-17 sheet-center">
+                                                                          <SELECT class="inSmallNum" type="text" name="attr_Speziell">
+                                                                                              <option value="-"selected>-</option>
+                                                                                              <option value="7">7</option>
+                                                                                              <option value="9">9</option>
+                                                                                              <option value="11">11</option>
+                                                                                              <option value="V">V</option>
+                                                                                              <option value="Z">Z</option>
+                                                                                              <option value="Z+">Z+</option>
+                                                                                              <option value="Z*">Z*</option>
+                                                      									            </SELECT><br/></div>
+                                                                          </li>
+                                            </ul>
 
                                         </ul>
 
@@ -1278,7 +1799,7 @@
 
                                         <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Zaubername</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Reichweite</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Reichw.</div>
 
                                         <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dauer</div>
 
@@ -1298,9 +1819,9 @@
 
                                         <div class="sheet-col-1-3"></div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Ellen)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(e)</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Runden)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Rd.)</div>
 
                                         <div class="sheet-col-7-23"></div>
 
@@ -1660,7 +2181,7 @@
 
                                         <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Zaubername</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Reichweite</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Reichw.</div>
 
                                         <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dauer</div>
 
@@ -1680,9 +2201,9 @@
 
                                         <div class="sheet-col-1-3"></div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Ellen)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(e)</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Runden)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Rd.)</div>
 
                                         <div class="sheet-col-7-23"></div>
 
@@ -1952,7 +2473,7 @@
 
                                             <li><b>Treffsicherheit :</b> +1 auf Fernkampfangriffe, addiert sich auf GES Bonus<br/></li>
 
-                                            <li><b>Klein gewachsen :</b> -2 auf RK bei Angriffen übermenschengroßen Kreaturen<br/></li>
+                                            <li><b>Klein gewachsen :</b> -2 auf RK bei Angriffen übermenschengroßer Kreaturen<br/></li>
 
                                             <li><b>[Optional] Schnell :</b> +1 auf persönliche Initiative, addiert sich auf GES Bonus<br/></li>
 
@@ -2136,7 +2657,7 @@
 
                                         <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Zaubername</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Reichweite</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Reichw.</div>
 
                                         <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dauer</div>
 
@@ -2156,9 +2677,9 @@
 
                                         <div class="sheet-col-1-3"></div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Ellen)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(e)</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Runden)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Rd.)</div>
 
                                         <div class="sheet-col-7-23"></div>
 
@@ -2547,7 +3068,7 @@
 
 
         <!-- EQUIPMENT -->
-            <div style="display: table; text-align:left; width:100%;"> 
+            <div style="display: table; text-align:left; width:100%;">
                 <div style="display: table-row; width:100%;">
                              <div class="sheet-row">
                                 <div class="sheet-col-1-2"><b>&nbsp;BELASTUNG</b></div>
@@ -2555,7 +3076,7 @@
                             </div>
                             <div style="display: table-row; width: 100%;">
                                 <div style="display:table-cell;text-align: center; width: 200px">
-                                    <input type="number" name="attr_encumbrance" class="sheet-inLrgNum" title="Belastung : Das vom Charakter getragene Gesamtgewicht" value="{@{inventory_weight_calc} + @{magic_inventory_weight_calc} + @{treasure_weight_calc}}" disabled="disabled"/>
+                                    <input type="number" name="attr_encumbrance" class="sheet-inLrgNum" title="Belastung : Das vom Charakter getragene Gesamtgewicht" value="@{inventory_weight_calc} + @{magic_inventory_weight_calc} + @{treasure_weight_calc}" disabled="disabled"/>
                                     Münzen
                                 </div>
                                 <div style="display:table-cell; width: 187px">
@@ -2587,520 +3108,521 @@
             <div class="sheet-row">
                     <div class="sheet-col-1-2">
                         <div class="sheet-libel1">MAGISCHE GEGENSTÄNDE</div>
-            
-            
+
+
                         <!-- BEGIN AUTO GENERATED CONTENT -->
-                        
+
                                     <!-- BEGIN new inventory page -->
                     <!--<div class="sheet-col-1-2">-->
                         <div class="sheet-inventory-page1">
-                        
-                            <div class="sheet-row">   
+
+                            <div class="sheet-row">
                                 <div class="sheet-col-2-15 sheet-center sheet-small-label">Menge</div>
                                 <div class="sheet-col-7-15 sheet-center sheet-small-label">Name</div>
                                 <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
                                 <div class="sheet-col-6-17 sheet-center sheet-small-label">Gewicht (in Münzen)</div>
                             </div>
-                                
+
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row1">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty1" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname1"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight1" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight1" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                              <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row2">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty2" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname2"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight2" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight2" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row3">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty3" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname3"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight3" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight3" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row4">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty4" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname4"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight4" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight4" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row5">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                    <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty5" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname5"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight5" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight5" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row6">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty6" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname6"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight6" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight6" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row7">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty7" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname7"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight7" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight7" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row8">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty8" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname8"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight8" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight8" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row9">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty9" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname9"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight9" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight9" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row10">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty10" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname10"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight10" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight10" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row11">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty11" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname11"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight11" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight11" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row12">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty12" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname12"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight12" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight12" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row13">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty13" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname13"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight13" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight13" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row14">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty14" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname14"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight14" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight14" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row15">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty15" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname15"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight15" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight15" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row16">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty16" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname16"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight16" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight16" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row17">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty17" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname17"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight17" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight17" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row18">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty18" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname18"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight18" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight18" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row19">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty19" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname19"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight19" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight19" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row20">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_magic_inventoryqty20" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_magic_inventoryname20"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_magic_inventoryweight20" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_magic_inventoryweight20" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
                         </div>
-                        <!-- END inventory page --><input type="hidden" name="attr_magic_inventory_weight_calc" value="{@{magic_inventoryweight1} + @{magic_inventoryweight2} + @{magic_inventoryweight3} + @{magic_inventoryweight4} + @{magic_inventoryweight5} + @{magic_inventoryweight6} + @{magic_inventoryweight7} + @{magic_inventoryweight8} + @{magic_inventoryweight9} + @{magic_inventoryweight10} + @{magic_inventoryweight11} + @{magic_inventoryweight12} + @{magic_inventoryweight13} + @{magic_inventoryweight14} + @{magic_inventoryweight15} + @{magic_inventoryweight16} + @{magic_inventoryweight17} + @{magic_inventoryweight18} + @{magic_inventoryweight19} + @{magic_inventoryweight20}{" />
-            
-   
+                        <!-- END inventory page -->
+					<input type="hidden" name="attr_magic_inventory_weight_calc" value="@{magic_inventoryweight1} + @{magic_inventoryweight2} + @{magic_inventoryweight3} + @{magic_inventoryweight4} + @{magic_inventoryweight5} + @{magic_inventoryweight6} + @{magic_inventoryweight7} + @{magic_inventoryweight8} + @{magic_inventoryweight9} + @{magic_inventoryweight10} + @{magic_inventoryweight11} + @{magic_inventoryweight12} + @{magic_inventoryweight13} + @{magic_inventoryweight14} + @{magic_inventoryweight15} + @{magic_inventoryweight16} + @{magic_inventoryweight17} + @{magic_inventoryweight18} + @{magic_inventoryweight19} + @{magic_inventoryweight20}"/>
+
                     </div>
 
                     <div class="sheet-col-1-2" style="border-left: 4px solid black;padding:5px">
                         <div class="sheet-libel1">NORMALE GEGENSTÄNDE</div>
                         <div class="sheet-inventory-page1">
-            
-                            <div class="sheet-row">   
+
+                            <div class="sheet-row">
                                 <div class="sheet-col-2-15 sheet-center sheet-small-label">Menge</div>
                                 <div class="sheet-col-7-15 sheet-center sheet-small-label">Name</div>
                                 <div class="sheet-col-1-22 sheet-center">&nbsp;</div>
                                 <div class="sheet-col-6-17 sheet-center sheet-small-label">Gewicht(in Münzen)</div>
                             </div>
-                                
+
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row1">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty1" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname1"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight1" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight1" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row2">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty2" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname2"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight2" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight2" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row3">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty3" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname3"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight3" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight3" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row4">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty4" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname4"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight4" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight4" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row5">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty5" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname5"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight5" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight5" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row6">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty6" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname6"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight6" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight6" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row7">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty7" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname7"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight7" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight7" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row8">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty8" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname8"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight8" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight8" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row9">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty9" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname9"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight9" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight9" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row10">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty10" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname10"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight10" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight10" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row11">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty11" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname11"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight11" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight11" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row12">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty12" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname12"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight12" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight12" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row13">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty13" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname13"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight13" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight13" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row14">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty14" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname14"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight14" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight14" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row15">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty15" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname15"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight15" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight15" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row16">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty16" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname16"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight16" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight16" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row17">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty17" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname17"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight17" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight17" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row18">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty18" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname18"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight18" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight18" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row19">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty19" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname19"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight19" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight19" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
 
                             <!-- BEGIN inventory row -->
                             <div class="sheet-inventory-row20">
-                                
+
                                 <div class="sheet-row sheet-grey-row">
                                     <div class="sheet-col-2-15"><input class="sheet-inSmallNum_noBorder" type="number" name="attr_inventoryqty20" value="1" min="0" step="1"></div>
                                     <div class="sheet-col-9-15"><input class="sheet-inMainTxt" type="text" name="attr_inventoryname20"></div>
-                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="text" name="attr_inventoryweight20" value="0" min="0" step="1"></div>
+                                    <div class="sheet-col-4-15"><input class="sheet-inLrgNum" type="number" name="attr_inventoryweight20" value="0" min="0" step="1"></div>
                                 </div>
-                                    
+
                             </div>
                             <!-- END inventory row -->
                         </div>
-                        <!-- END inventory page --><input type="hidden" name="attr_inventory_weight_calc" type="number" value="{@{inventoryweight1} + @{inventoryweight2} + @{inventoryweight3} + @{inventoryweight4} + @{inventoryweight5} + @{inventoryweight6} + @{inventoryweight7} + @{inventoryweight8} + @{inventoryweight9} + @{inventoryweight10} + @{inventoryweight11} + @{inventoryweight12} + @{inventoryweight13} + @{inventoryweight14} + @{inventoryweight15} + @{inventoryweight16} + @{inventoryweight17} + @{inventoryweight18} + @{inventoryweight19} + @{inventoryweight20}}" />
+                        <!-- END inventory page -->
                     </div> <!-- END CELL EQUIP OTHERS -->
             </div> <!-- END EQUIPMENT -->
+			<input type="hidden" name="attr_inventory_weight_calc" value="@{inventoryweight1} + @{inventoryweight2} + @{inventoryweight3} + @{inventoryweight4} + @{inventoryweight5} + @{inventoryweight6} + @{inventoryweight7} + @{inventoryweight8} + @{inventoryweight9} + @{inventoryweight10} + @{inventoryweight11} + @{inventoryweight12} + @{inventoryweight13} + @{inventoryweight14} + @{inventoryweight15} + @{inventoryweight16} + @{inventoryweight17} + @{inventoryweight18} + @{inventoryweight19} + @{inventoryweight20}"/>
 
             <hr/>
 
@@ -3128,7 +3650,7 @@
 
                             <div class="sheet-row">
 
-                                <div class="sheet-col-1-8 sheet-center" title="Kupfermünzen><input class="sheet-inLrgNum" type="text" name="attr_cp" value="0" min="0" step="1"></div>
+                                <div class="sheet-col-1-8 sheet-center" title="Kupfermünzen"><input class="sheet-inLrgNum" type="text" name="attr_cp" value="0" min="0" step="1"></div>
 
                                 <div class="sheet-col-1-8 sheet-center" title="Silbermünzen"><input class="sheet-inLrgNum" type="text" name="attr_sp" value="0" min="0" step="1"></div>
 
@@ -3221,7 +3743,7 @@
 
                 <div style="display: table-row">
 
-                    <div class="sheet-title1" style="width: 10%; text-align: center; font-size: 25px"><u>MONSTER SHEET</u></div>
+                    <div class="sheet-title1" style="width: 10%; text-align: center; font-size: 25px"><u>MONSTERBOGEN</u></div>
 
                 </div>
 
@@ -3241,7 +3763,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">RANDOM ENCOUNTERS</div>
+                                <div  class="sheet-title1">ZUFÄLL. BEGEGNUNG</div>
 
                             </div>
 
@@ -3255,7 +3777,7 @@
 
                         <div class="sheet-row">
 
-                            <div class="sheet-col-4-17 sheet-ability-text sheet-vert-middle">Random Encounters</div>
+                            <div class="sheet-col-4-17 sheet-ability-text sheet-vert-middle">Zufäll. Begegnungen</div>
 
                                 <input type="hidden" name="attr_RandomEncounter-die" value="1d6cs1cf6">
 
@@ -3263,7 +3785,7 @@
 
                                 <div class="sheet-col-1-16 sheet-vert-middle">
 
-                                    <button type='roll' name="Random Encounter" value="/w gm &{template:odnd} {{stat=1}} {{title=Random Encounter}} {{randomencounter=[[@{RandomEncounter-die}]]}} {{chance=[[@{RandomEncounter-chance}]]}}" title="Random Encounter"></button>
+                                    <button type='roll' name="Zufällige Begegnung" value="/w gm &{template:odnd} {{stat=1}} {{title=Zufällige Begegnung}} {{randomencounter=[[@{RandomEncounter-die}]]}} {{chance=[[@{RandomEncounter-chance}]]}}" title="Zufällige Begegnung"></button>
 
                                 </div>
 
@@ -3277,11 +3799,11 @@
 
                                 <input type="hidden" name="attr_RandomDistance-multiplier" value="10">
 
-                                <div class="sheet-col-5-17 sheet-ability-text sheet-vert-middle">Random Encounter Distance</div>
+                                <div class="sheet-col-5-17 sheet-ability-text sheet-vert-middle">Zufäll. Begegnung Entfern.</div>
 
                                 <div class="sheet-col-1-16 sheet-vert-middle">
 
-                                    <button type='roll' name="Random Distance" value="/w gm &{template:odnd} {{stat=1}} {{title=Random Encounter Distance}} {{randomdistance=[[@{RandomDistance-die} * [[@{RandomDistance-multiplier}]] ]]}}" name='Distance' title="Distance Check"></button>
+                                    <button type='roll' name="Zufällige Distanz" value="/w gm &{template:odnd} {{stat=1}} {{title=Zufällige Begegnung Entfernung}} {{randomdistance=[[@{RandomDistance-die} * [[@{RandomDistance-multiplier}]] ]]}}" name='Distance' title="Entfernungs Check"></button>
 
                                 </div>
 
@@ -3337,11 +3859,11 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Current" name="attr_MonsterHP"><br/>Hit Points</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Aktuell" name="attr_MonsterHP"><br/>Trefferpunkte</div>
 
                                 <b>&nbsp;/&nbsp;</b>
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Max" name="attr_MonsterHP_max"><br/>Max HP</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" placeholder="Max" name="attr_MonsterHP_max"><br/>Max TP</div>
 
                             </div>
 
@@ -3359,7 +3881,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold;" type="text" placeholder="Monster Type" name="attr_MonsterType"><br/>Monster Type</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold;" type="text" placeholder="Monster Typ" name="attr_MonsterType"><br/>Monster Typ</div>
 
                             </div>
 
@@ -3371,7 +3893,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Armor Class" name="attr_MonsterAC"><br/>Armor Class</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="RK" name="attr_MonsterAC"><br/>Rüstungsklasse</div>
 
                             </div>
 
@@ -3389,15 +3911,15 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="1" name="attr_MonsterHD"><br/># Hit Dice</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="1" name="attr_MonsterHD"><br/># TW</div>
 
-                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="0" name="attr_MonsterHDBonus"><br/>HD Bonus</div>
+                                <div class="sheet-col-3-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="text" value="0" name="attr_MonsterHDBonus"><br/>TW Bonus</div>
 
                                     <input type="hidden" name="attr_MonsterHit-die" value="(@{MonsterHD})d8cs8cf1" />
 
                                     <div class="sheet-col-1-10 sheet-vert-middle">
 
-                                        <button type='roll' value="/w gm &{template:odnd} {{name=@{MonsterName}}} {{title=Monster Hit Points}} {{MonsterHD=[[@{MonsterHit-die} + @{MonsterHDBonus}]]}}" name='Monster HP' title="Roll for monster's Hit Points"></button>
+                                        <button type='roll' value="/w gm &{template:odnd} {{name=@{MonsterName}}} {{title=Monster Trefferpunkte}} {{MonsterHD=[[@{MonsterHit-die} + @{MonsterHDBonus}]]}}" name='Monster TP' title="Wurf für Monster/NSC TP"></button>
 
                                     </div>
 
@@ -3411,7 +3933,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Movement" name="attr_MonsterMove"><br/>Movement</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Bewegung" name="attr_MonsterMove"><br/>Bewegung</div>
 
                             </div>
 
@@ -3427,7 +3949,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-6-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="No. Appearing" name="attr_MonsterQty"><br/>No. Appearing</div>
+                                <div class="sheet-col-6-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Anzahl" name="attr_MonsterQty"><br/>Anzahl der Begegnung</div>
 
                             </div>
 
@@ -3439,13 +3961,13 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-11-13 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.0em; font-weight: bold" type="text" placeholder="Monster Morale" name="attr_MonsterMorale"><br/>Monster Morale</div>
+                                <div class="sheet-col-11-13 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.0em; font-weight: bold" type="text" placeholder="Moral" name="attr_MonsterMorale"><br/>Monster Moral</div>
 
                                 <input type="hidden" name="attr_MonsterMorale-die" value="2d6cs1cf6" />
 
                                 <div class="sheet-col-1-13 sheet-vert-middle">
 
-                                    <button type='roll' name="Monster Morale Check" value="/w gm &{template:odnd} {{stat=1}} {{name=@{MonsterName}}} {{title=Monster Morale Check}} {{moralecheck=[[@{MonsterMorale-die}]]}} {{chance=[[@{MonsterMorale}]]}}" name='Monster Morale' title="Monster Morale Check"></button>
+                                    <button type='roll' name="Monster Moralwurf" value="/w gm &{template:odnd} {{stat=1}} {{name=@{MonsterName}}} {{title=Monster Moralwurf}} {{moralecheck=[[@{MonsterMorale-die}]]}} {{chance=[[@{MonsterMorale}]]}}" name='Monster Moral' title="Monster Moralwurf"></button>
 
                                 </div>
 
@@ -3465,7 +3987,7 @@
 
                                 <div class="sheet-col-1-1 sheet-center">&nbsp;</div>
 
-                                <div class="sheet-col-4-7 sheet-ability-text sheet-vert-bottom" style="font-size: 1.1em; font-weight: bold">Monster Surprise</div>
+                                <div class="sheet-col-4-7 sheet-ability-text sheet-vert-bottom" style="font-size: 1.1em; font-weight: bold">Monster Überrasch.</div>
 
                                     <input type="hidden" name="attr_MonsterSurprise-die" value="1d6cs6cf1" />
 
@@ -3473,7 +3995,7 @@
 
                                     <div class="sheet-col-1-9 sheet-vert-bottom">
 
-                                        <button type='roll' name="Action: Surprise" value="/w gm &{template:odnd} {{class=1}} {{name=@{MonsterName}}} {{title=Monster Surprise Check}} {{surprise=[[ @{MonsterSurprise-die} + (?{Bonus/Minus|0}) ]] }} {{chance=[[@{MonsterSurprise-chance}]]}}"></button>
+                                        <button type='roll' name="Aktion: Überraschen" value="/w gm &{template:odnd} {{class=1}} {{name=@{MonsterName}}} {{title=Monster Überraschenwurf}} {{surprise=[[ @{MonsterSurprise-die} + (?{Bonus/Minus|0}) ]] }} {{chance=[[@{MonsterSurprise-chance}]]}}"></button>
 
                                     </div>
 
@@ -3491,7 +4013,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-8 sheet-left"><input class="sheet-inMainTxt sheet-center" style="text-align: center; font-size: 1.1em; font-weight: bold" type="text" name="attr_MonsterAlignment" placeholder="Alignment"<br/>Alignment</div>
+                                <div class="sheet-col-1-8 sheet-left"><input class="sheet-inMainTxt sheet-center" style="text-align: center; font-size: 1.1em; font-weight: bold" type="text" name="attr_MonsterAlignment" placeholder="Gesinnung"<br/>Gesinnung</div>
 
                             </div>
 
@@ -3509,7 +4031,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Treasure Type" name="attr_MonsterTreasure"><br/>Treasure Type</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Schatztyp" name="attr_MonsterTreasure"><br/>Schatztyp</div>
 
                             </div>
 
@@ -3525,7 +4047,7 @@
 
                             <div class="sheet-col-1-3">
 
-                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="XP Value" name="attr_MonsterXP"><br/>Monster XP Value</div>
+                                <div class="sheet-col-1-1 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="EP-Wert" name="attr_MonsterXP"><br/>Monster EP-Wert</div>
 
                             </div>
 
@@ -3551,7 +4073,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">MONSTER SAVING THROWS</div>
+                                <div  class="sheet-title1">MONSTER RETTUNGSWÜRFE</div>
 
                             </div>
 
@@ -3565,7 +4087,7 @@
 
                             <div class="sheet-row"> <!-- Save As -->
 
-                                <div class="sheet-col-1-4 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="Save As" name="attr_MonsterSave"><br/>Monster Save</div>
+                                <div class="sheet-col-1-4 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold" type="text" placeholder="RW wie" name="attr_MonsterSave"><br/>Monster RW</div>
 
                             </div> <!--END Save As -->
 
@@ -3595,11 +4117,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' style="font-family: 'Gloria Hallelujah', cursive; font-weight: bold; font-size: 1.2em;" value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Poison or Death Ray}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Poison}]]}}" name='ST_Poison' class="sheet-savingthrow-roll" title="Poison Save"></button>
+                                                <button type='roll' style="font-family: 'Gloria Hallelujah', cursive; font-weight: bold; font-size: 1.2em;" value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Gift/Todesmagie}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Poison}]]}}" name='ST_Poison' class="sheet-savingthrow-roll" title="Gift RW"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">POISON or DEATH RAY</div>
+                                            <div class="sheet-savingthrow-lib">GIFT oder TODESMAGIE</div>
 
                                         </div> <!-- END Monster Poison ST -->
 
@@ -3623,11 +4145,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Magic Wand}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Wand}]]}}" name='ST_Wand' class="sheet-savingthrow-roll" title="Wand Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Zauberstab}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Wand}]]}}" name='ST_Wand' class="sheet-savingthrow-roll" title="RW Zauberstab"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">MAGIC WAND</div>
+                                            <div class="sheet-savingthrow-lib">ZAUBERSTAB</div>
 
                                         </div> <!-- END Wand ST -->
 
@@ -3655,11 +4177,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Turn to Stone or Paralysis}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Stone}]]}}" name='ST_Stone' class="sheet-savingthrow-roll" title="Stone Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Zu Stein erstarren/ Lähmung}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Stone}]]}}" name='ST_Stone' class="sheet-savingthrow-roll" title="RW Stein/Lähmung"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">TURN TO STONE or PARALYSIS</div>
+                                            <div class="sheet-savingthrow-lib">ZU STEIN ERSTARREN/ LÄHMUNG</div>
 
                                         </div> <!-- END Stone ST -->
 
@@ -3683,11 +4205,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Dragon Breath}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Breath}]]}}" name='ST_Breath' class="sheet-savingthrow-roll" title="Breath Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Drachenodem}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Breath}]]}}" name='ST_Breath' class="sheet-savingthrow-roll" title="RW Drachenodem"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">DRAGON BREATH</div>
+                                            <div class="sheet-savingthrow-lib">DRACHENODEM</div>
 
                                         </div> <!-- Breath ST -->
 
@@ -3715,11 +4237,11 @@
 
                                             <div class="sheet-savingthrow-roll">
 
-                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Spells or Magic Staff}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Spells}]]}}" name='ST_Spells' class="sheet-savingthrow-roll" title="Spell Save"></button>
+                                                <button type='roll' value="/w gm &{template:odnd} {{save=1}} {{name=@{MonsterName}}} {{title=Zauber o. -stecken, -ruten}} {{savingthrow=[[1d20 + (?{Bonus/Minus|0})]]}} {{savetype=[[@{MonsterST_Spells}]]}}" name='ST_Spells' class="sheet-savingthrow-roll" title="RW Zauber"></button>
 
                                             </div>
 
-                                            <div class="sheet-savingthrow-lib">SPELLS or MAGIC STAFF</div>
+                                            <div class="sheet-savingthrow-lib">ZAUBERSPRÜCHE, -STECKEN oder -RUTEN</div>
 
                                         </div> <!-- END Spells ST -->
 
@@ -3751,7 +4273,7 @@
 
                                     <div class="sheet-col-3-14 sheet-center sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
-                                    <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Against</div>
+                                    <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Gegen</div>
 
                                     <div class="sheet-col-1-21 sheet-center sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
@@ -3769,11 +4291,11 @@
 
                                             <div class="sheet-col-1-23 sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
-                                            <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_MonsterstBonus" placeholder="+0" title="Saving Throw Bonus"></div>
+                                            <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_MonsterstBonus" placeholder="+0" title="Rettungswurfbonus"></div>
 
                                             <div class="sheet-col-1-10 sheet-center">&nbsp;</div>
 
-                                            <div class="sheet-col-7-23 sheet-vert-middle"><input type="text" class="sheet-inMainTxt sheet-center" name="attr_MonsterstAgainst" title="Against" placeholder="Bonus against"></div>
+                                            <div class="sheet-col-7-23 sheet-vert-middle"><input type="text" class="sheet-inMainTxt sheet-center" name="attr_MonsterstAgainst" title="Gegen" placeholder="Bonus gegen"></div>
 
                                         </div>
 
@@ -3809,7 +4331,7 @@
 
                             <div style="display: table-row;text-align: center;">
 
-                                <div style="display: table-cell; text-align: right;"><b>AC :</b></div>
+                                <div style="display: table-cell; text-align: right;"><b>RK :</b></div>
 
                                 <div style="display: table-cell;text-align: center;">9</div>
 
@@ -3835,7 +4357,7 @@
 
                             <div style="display: table-row;text-align: center;">
 
-                                <div style="display: table-cell; text-align: left;"><b>MONSTER "TO HIT" ROLL</b></div>
+                                <div style="display: table-cell; text-align: left;"><b>MONSTER ETW0</b></div>
 
                                 <div style="display: table-cell;"><input type="number" name="attr_MonsterHitAC9" class="sheet-inSmallNum" value="0" readonly="readonly"/></div>
 
@@ -3877,7 +4399,7 @@
 
                             <div style="display: table-cell;width:inherit;">
 
-                                <div  class="sheet-title1">MONSTER ATTACKS</div>
+                                <div  class="sheet-title1">MONSTER ANGRIFF</div>
 
                             </div>
 
@@ -3905,7 +4427,7 @@
 
                                 <div class="sheet-col-12-17">
 
-                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_MonsterInitBonus" title="Initiative Bonus if any"><br/>Bonus</div>
+                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_MonsterInitBonus" title="Initiativbonus, falls vorhanden"><br/>Bonus</div>
 
                                     <input type="hidden" name="attr_MonsterInit-die" value="1d6cf1cs6">
 
@@ -3933,13 +4455,13 @@
 
                                     <div class="sheet-col-3-17 sheet-center">&nbsp;</div>
 
-                                    <div class="sheet-col-12-17 sheet-ability-text sheet-vert-middle" style="font-size: 1.1em; font-weight: bold">Monster Attacks</div>
+                                    <div class="sheet-col-12-17 sheet-ability-text sheet-vert-middle" style="font-size: 1.1em; font-weight: bold">Monster Angriffe</div>
 
                                 </div>
 
                                 <div class="sheet-col-12-17">
 
-                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_monsterNumAttacks" title="The Number of Monster Attacks"><br/></div>
+                                    <div class="sheet-col-2-7 sheet-left"><input class="sheet-inMainTxt sheet-center" style="font-size: 1.1em; font-weight: bold; max-width: 100px" type="number" placeholder="0" value="0" step="1" name="attr_monsterNumAttacks" title="Anzahl der Monster Angriffe"><br/></div>
 
                                 </div>
 
@@ -3975,9 +4497,9 @@
 
                                     <div style="display: table-cell;width:420px;">
 
-                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterwpnname" class="sheet-inMainTxt" placeholder="Weapon Name / attack" />
+                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterwpnname" class="sheet-inMainTxt" placeholder="Waffenname / Angriff" />
 
-                                        &nbsp;&nbsp;1d20+
+                                        &nbsp;&nbsp;1W20+
 
                                         <input type="number" name="attr_Monsterattack-bonus" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Angiffsbonus" placeholder="0" value="0" />
 
@@ -3985,17 +4507,17 @@
 
                                     <div style="display: table-cell; text-align: right;">
 
-                                        <b>Damage:&nbsp;</b>
+                                        <b>Schaden:&nbsp;</b>
 
-                                        <input type="number" name="attr_Monsterattack-number-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Number of Dice" placeholder="1" value="1" />
+                                        <input type="number" name="attr_Monsterattack-number-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Anzahl der Würfel" placeholder="1" value="1" />
 
-                                        <b>D</b>
+                                        <b>W</b>
 
-                                        <input type="number" name="attr_Monsterattack-damage-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Damage Die" placeholder="6" value="6" />
+                                        <input type="number" name="attr_Monsterattack-damage-die" class="sheet-inMainNum" style="width: 45px; font-size: 1.1em; font-weight: bold" title="Schadenswürfel" placeholder="6" value="6" />
 
                                         +
 
-                                        <input type="number" name="attr_Monsterattack-damage-bonus" class="sheet-inMainNum"  style="width: 45px; font-size: 1.1em; font-weight: bold" title="Damage roll bonus" placeholder="0" value="0" />
+                                        <input type="number" name="attr_Monsterattack-damage-bonus" class="sheet-inMainNum"  style="width: 45px; font-size: 1.1em; font-weight: bold" title="Schadensbonus" placeholder="0" value="0" />
 
                                     </div>
 
@@ -4023,7 +4545,7 @@
 
                                 <div style="display: table-cell;width:inherit;">
 
-                                    <div  class="sheet-title1">MONSTER ABILITIES</div>
+                                    <div  class="sheet-title1">MONSTER FÄHIGKEITEN</div>
 
                                 </div>
 
@@ -4051,13 +4573,13 @@
 
                                     <div style="display: table-cell;width:420px;">
 
-                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterabilityname" class="sheet-inMainTxt" placeholder="Ability Name" />
+                                        <input type="text" style="font-size: 1.1em; font-weight: bold" name="attr_Monsterabilityname" class="sheet-inMainTxt" placeholder="Fähigkeitenname" />
 
                                     </div>
 
                                     <div style="display: table-cell; text-align: right; border-width: 2px 2px 2px 2px; border-color: black; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-bottom-style: solid;">
 
-                                        <textarea name="attr_Monsterability-text" class="sheet-inMainTxt" style="width: 420px; height: 75px; font-size: 14px; font-weight: bold" title="Ability Text" placeholder="Insert ability text here"></textarea>
+                                        <textarea name="attr_Monsterability-text" class="sheet-inMainTxt" style="width: 420px; height: 75px; font-size: 14px; font-weight: bold" title="Ability Text" placeholder="Infos zur Fähigkeit hier eintragen"></textarea>
 
                                     </div>
 
@@ -4081,51 +4603,51 @@
 
                                 <div class="sheet-col-1">
 
-                                    <div class="sheet-title1">MONSTER SPELLS</div>
+                                    <div class="sheet-title1">MONSTER ZAUBER</div>
 
-                                        <div class="sheet-col-1 sheet-left sheet-tdlabelsmall">Number of Spells by Level</div>
+                                        <div class="sheet-col-1 sheet-left sheet-tdlabelsmall">Anzahl Zauber pro Stufe</div>
 
                                             <table>
 
                                                 <tr>
 
-                                                    <td class="tdlabelsmall">1st</td>
+                                                    <td class="tdlabelsmall">1.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl1Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">2nd</td>
+                                                    <td class="tdlabelsmall">2.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl2Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">3rd</td>
+                                                    <td class="tdlabelsmall">3.</td>
 
                                                     <td><input type= "number"  class="sminput" name="attr_monsterLvl3Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">4th</td>
+                                                    <td class="tdlabelsmall">4.</td>
 
                                                     <td><input type= "number"  class="sminput" name="attr_monsterLvl4Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">5th</td>
+                                                    <td class="tdlabelsmall">5.</td>
 
                                                     <td><input type= "number"  class="sminput" name="attr_monsterLvl5Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">6th</td>
+                                                    <td class="tdlabelsmall">6.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl6Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">7th</td>
+                                                    <td class="tdlabelsmall">7.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl7Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">8th</td>
+                                                    <td class="tdlabelsmall">8.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl8Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">9th</td>
+                                                    <td class="tdlabelsmall">9.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl9Spells">&nbsp;</td>
 
-                                                    <td class="tdlabelsmall">10th</td>
+                                                    <td class="tdlabelsmall">10.</td>
 
                                                     <td><input type= "number" class="sminput" name="attr_monsterLvl10Spells"></td>
 
@@ -4141,17 +4663,17 @@
 
                                         <div class="sheet-col-1-23 sheet-small-label sheet-vert-bottom">&nbsp;</div>
 
-                                        <div class="sheet-col-1-14 sheet-small-label sheet-vert-bottom">Lvl</div>
+                                        <div class="sheet-col-1-14 sheet-small-label sheet-vert-bottom">Stufe</div>
 
-                                        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Spell Name</div>
+                                        <div class="sheet-col-1-3 sheet-center sheet-small-label sheet-vert-bottom">Zaubername</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Rng</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Rw</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dur.</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Dau.</div>
 
-                                        <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Spell Effect</div>
+                                        <div class="sheet-col-7-23 sheet-center sheet-small-label sheet-vert-bottom">Zaubereffekt</div>
 
-                                        <div class="sheet-col-1-21 sheet-center sheet-small-label sheet-vert-bottom">Prepared</div>
+                                        <div class="sheet-col-1-21 sheet-center sheet-small-label sheet-vert-bottom">Vorbereitet</div>
 
                                     </div>
 
@@ -4165,9 +4687,9 @@
 
                                         <div class="sheet-col-1-3"></div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(feet)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(e)</div>
 
-                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(turns)</div>
+                                        <div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">(Rd.)</div>
 
                                         <div class="sheet-col-7-23"></div>
 
@@ -4187,31 +4709,31 @@
 
                                                 <div class="sheet-col-1-23 sheet-vert-middle sheet-left">
 
-                                                    <button type="roll" class="sheet-roll sheet-vert-middle" name="roll_monsterSpellCheck" title="Cast Spell"
+                                                    <button type="roll" class="sheet-roll sheet-vert-middle" name="roll_monsterSpellCheck" title="Zauber wirken"
 
                                                     value="&{template:odnd} {{spell=1}} {{name=@{character_name}}} {{title=@{monsterSpellName}}} {{spellcasting=1}} {{spellshowinfoblock=1}} {{spelllevel=@{monsterSpellLevel}}} {{spellrange=@{monsterSpellRange}}} {{spellduration=@{monsterSpellDuration}}} {{spellshowdesc=@{monsterSpellEffect} }}" ></button>
 
                                                 </div>
 
-                                                <div class="sheet-col-1-14 sheet-vert-middle sheet-center"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellLevel" title="Spell Level"></div>
+                                                <div class="sheet-col-1-14 sheet-vert-middle sheet-center"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellLevel" title="Zauberstufe"></div>
 
-                                                <div class="sheet-col-1-3 sheet-vert-middle"><input type="text" class="sheet-inMainTxt" name="attr_monsterSpellName" placeholder="Spell Name"></div>
+                                                <div class="sheet-col-1-3 sheet-vert-middle"><input type="text" class="sheet-inMainTxt" name="attr_monsterSpellName" placeholder="Zaubername"></div>
 
-                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellRange" title="Spell Range"></div>
+                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellRange" title="Zauber Rw"></div>
 
-                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellDuration" title="Spell Duration"></div>
+                                                <div class="sheet-col-1-14 sheet-vert-middle"><input type="text" class="sheet-inSmallNum_noBorder" name="attr_monsterSpellDuration" title="Dauer d. Zauber"></div>
 
-                                                <div class="sheet-col-7-23 sheet-small-label sheet-vert-middle"><textarea class="sheet-MEDwidthSMheight" name="attr_monsterSpellEffect" placeholder="Spell Effect"></textarea></div>
+                                                <div class="sheet-col-7-23 sheet-small-label sheet-vert-middle"><textarea class="sheet-MEDwidthSMheight" name="attr_monsterSpellEffect" placeholder="Zaubereffekt"></textarea></div>
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared1" title="Prepared once" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared1" title="1x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared2" title="Prepared twice" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared2" title="2x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared3" title="Prepared thrice" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared3" title="3x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared4" title="Prepared four" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared4" title="4x vorbereitet" />
 
-                                                <input type="checkbox" name="attr_monsterSpellPrepared5" title="Prepared five" />
+                                                <input type="checkbox" name="attr_monsterSpellPrepared5" title="5x vorbereitet" />
 
                                             </div>
 
@@ -4243,7 +4765,7 @@
 
                         <div class="sheet-col-1-1"> <!-- Notes -->
 
-                             <div class="sheet-title1 sheet-center">MONSTER NOTES</div>
+                             <div class="sheet-title1 sheet-center">MONSTER NOTIZEN</div>
 
                         </div>
 
@@ -5065,134 +5587,68 @@
 <!-- Sheet Worker Script -->
 
 <script type="text/worker">
-
     /* ---- BEGIN: TheAaronSheet.js ---- */
-
     // Github:   https://github.com/shdwjk/TheAaronSheet/blob/master/TheAaronSheet.js
-
     // By:       The Aaron, Arcane Scriptomancer
-
     // Contact:  https://app.roll20.net/users/104025/the-aaron
-
     // Minified with http://jscompress.com/
-
     var TAS=TAS||function(){"use strict";var a="0.2.4",b=1457098091,c={debug:{key:"debug",title:"DEBUG",color:{bgLabel:"#7732A2",label:"#F2EF40",bgText:"#FFFEB7",text:"#7732A2"}},error:{key:"error",title:"Error",color:{bgLabel:"#C11713",label:"white",bgText:"#C11713",text:"white"}},warn:{key:"warn",title:"Warning",color:{bgLabel:"#F29140",label:"white",bgText:"#FFD8B7",text:"black"}},info:{key:"info",title:"Info",color:{bgLabel:"#413FA9",label:"white",bgText:"#B3B2EB",text:"black"}},notice:{key:"notice",title:"Notice",color:{bgLabel:"#33C133",label:"white",bgText:"#ADF1AD",text:"black"}},log:{key:"log",title:"Log",color:{bgLabel:"#f2f240",label:"black",bgText:"#ffff90",text:"black"}},callstack:{key:"TAS",title:"function",color:{bgLabel:"#413FA9",label:"white",bgText:"#B3B2EB",text:"black"}},callstack_async:{key:"TAS",title:"ASYNC CALL",color:{bgLabel:"#413FA9",label:"white",bgText:"#413FA9",text:"white"}},TAS:{key:"TAS",title:"TAS",color:{bgLabel:"grey",label:"black;background:linear-gradient(#304352,#d7d2cc,#d7d2cc,#d7d2cc,#304352)",bgText:"grey",text:"black;background:linear-gradient(#304352,#d7d2cc,#d7d2cc,#d7d2cc,#304352)"}}},d={debugMode:!1,logging:{log:!0,notice:!0,info:!0,warn:!0,error:!0,debug:!1}},e=[],f={},g=function(a){switch(typeof a){case"string":return"string";case"boolean":return"boolean";case"number":return _.isNaN(a)?"NaN":a.toString().match(/\./)?"decimal":"integer";case"function":return"function: "+(a.name?a.name+"()":"(anonymous)");case"object":return _.isArray(a)?"array":_.isArguments(a)?"arguments":_.isNull(a)?"null":"object";default:return typeof a}},h=function(a,b,c){_.each(c,function(c){var d=g(c);switch(d){case"string":a(c);break;case"undefined":case"null":case"NaN":a("["+d+"]");break;case"number":case"not a number":case"integer":case"decimal":case"boolean":a("["+d+"]: "+c);break;default:a("["+d+"]:========================================="),b(c),a("=========================================================")}})},i=function(a){var b,c=a.key,e=a.title||"TAS",f=a.color&&a.color.bgLabel||"blue",g=a.color&&a.color.label||"white",i=a.color&&a.color.bgText||"blue",j=a.color&&a.color.text||"white";return b=function(a){console.log("%c "+e+": %c "+a+" ","background-color: "+f+";color: "+g+"; font-weight:bold;","background-color: "+i+";color: "+j+";")},function(){("TAS"===c||d.logging[c])&&h(b,function(a){console.log(a)},_.toArray(arguments))}},j=i(c.debug),k=i(c.error),l=i(c.warn),m=i(c.info),n=i(c.notice),o=i(c.log),p=i(c.TAS),q=i(c.callstack),r=i(c.callstack_async),s=function(a,b){var c=_.findIndex(e,function(c){return _.difference(c.stack,a).length===_.difference(a,c.stack).length&&0===_.difference(c.stack,a).length&&c.label===b});return-1===c&&(c=e.length,e.push({stack:a,label:b})),c},t=function(a){var b=_.defaults(a,d);b.logging=_.defaults(a&&a.logging||{},d.logging),d=b},u=function(){d.logging.debug=!0,d.debugMode=!0},v=function(){var a=new Error("dummy"),b=_.map(_.rest(a.stack.replace(/^[^\(]+?[\n$]/gm,"").replace(/^\s+at\s+/gm,"").replace(/^Object.<anonymous>\s*\(/gm,"{anonymous}()@").split("\n")),function(a){return a.replace(/\s+.*$/,"")});return b},w=function(a){var b,c;_.find(a,function(a){return(b=a.match(/TAS_CALLSTACK_(\d+)/))?(c=e[b[1]],r("===================="+(c.label?"> "+c.label+" <":"")+"===================="),w(c.stack),!0):(q(a),!1)})},x=function(){var a;d.debugMode&&(a=v(),a.shift(),p("==============================> CALLSTACK <=============================="),w(a),p("========================================================================="))},y=function(a,b,c){var e;return"function"==typeof a&&(c=b,b=a,a=void 0),d.debugMode?(e=v(),e.shift(),function(a,b,c,d){var e=s(c,d);return new Function("cb","ctx","TASlog","return function TAS_CALLSTACK_"+e+"(){TASlog('Entering: '+(cb.name||'(anonymous function)'));cb.apply(ctx||{},arguments);TASlog('Exiting: '+(cb.name||'(anonymous function)'));};")(a,b,p)}(b,c,e,a)):function(a,b){return function(){a.apply(b||{},arguments)}}(b,c)},z=function(a,b){f[a]=b},A=function(){setAttrs(f),f={}},B=function(a,b){return _.chain(a).reduce(function(b,c){return"string"==typeof c?b.push(c):(_.isArray(a)||_.isArguments(a))&&(b=B(c,b)),b},_.isArray(b)&&b||[]).uniq().value()},C=function(a,b){Object.defineProperty(a,"id",{value:b,writeable:!1,enumerable:!1})},D=function(a,b,c,d){!function(){var e=_.contains(["S","F","I","D"],b)?"_"+b:b,f=d||b,g=c;_.each(["S","I","F"],function(b){_.has(a,b)||Object.defineProperty(a,b,{value:{},enumerable:!1,readonly:!0})}),_.has(a,"D")||Object.defineProperty(a,"D",{value:_.reduce(_.range(10),function(a,b){return Object.defineProperty(a,b,{value:{},enumerable:!0,readonly:!0}),a},{}),enumerable:!1,readonly:!0}),Object.defineProperty(a,e,{enumerable:!0,set:function(a){a!==g&&(g=a,z(f,a))},get:function(){return g}}),Object.defineProperty(a.S,e,{enumerable:!0,set:function(a){var b=a.toString();b!==g&&(g=b,z(f,b))},get:function(){return g.toString()}}),Object.defineProperty(a.I,e,{enumerable:!0,set:function(a){var b=parseInt(a,10)||0;b!==g&&(g=b,z(f,b))},get:function(){return parseInt(g,10)||0}}),Object.defineProperty(a.F,e,{enumerable:!0,set:function(a){var b=parseFloat(a)||0;b!==g&&(g=b,z(f,b))},get:function(){return parseFloat(g)||0}}),_.each(_.range(10),function(b){Object.defineProperty(a.D[b],e,{enumerable:!0,set:function(a){var c=(parseFloat(a)||0).toFixed(b);c!==g&&(g=c,z(f,c))},get:function(){return(parseFloat(g)||0).toFixed(b)}})})}()},E=function(a){return function(a){var b=a,c=[],d=[],e=[],f=[],g=function(){return c=B(arguments,c),this},h=function(){return d=B(arguments,d),this},i=function(b,c,d,f){return e.push({type:"reduce",func:b&&_.isFunction(b)&&b||_.noop,memo:_.isUndefined(c)&&0||c,final:d&&_.isFunction(d)&&d||_.noop,context:f||{}}),this},j=function(b,c,d){return e.push({type:"map",func:b&&_.isFunction(b)&&b||_.noop,final:c&&_.isFunction(c)&&c||_.noop,context:d||{}}),this},k=function(b,c,d){return e.push({type:"each",func:b&&_.isFunction(b)&&b||_.noop,final:c&&_.isFunction(c)&&c||_.noop,context:d||{}}),this},l=function(b,c){return e.push({type:"tap",final:b&&_.isFunction(b)&&b||_.noop,context:c||{}}),this},m=function(b,c){return f.push({callback:b&&_.isFunction(b)&&b||_.noop,context:c||{}}),this},n=function(g,h){var i={},j={},k=[],l=[];m(g,h),getSectionIDs("repeating_"+b,function(a){k=a,l=_.reduce(k,function(a,c){return a.concat(_.map(d,function(a){return"repeating_"+b+"_"+c+"_"+a}))},[]),getAttrs(_.uniq(c.concat(l)),function(a){_.each(c,function(b){a.hasOwnProperty(b)&&D(j,b,a[b])}),i=_.reduce(k,function(c,e){var f={};return C(f,e),_.each(d,function(c){var d="repeating_"+b+"_"+e+"_"+c;D(f,c,a[d],d)}),c[e]=f,c},{}),_.each(e,function(a){var b;switch(a.type){case"tap":_.bind(a.final,a.context,i,j)();break;case"each":_.each(i,function(b){_.bind(a.func,a.context,b,j,b.id,i)()}),_.bind(a.final,a.context,i,j)();break;case"map":b=_.map(i,function(b){return _.bind(a.func,a.context,b,j,b.id,i)()}),_.bind(a.final,a.context,b,i,j)();break;case"reduce":b=a.memo,_.each(i,function(c){b=_.bind(a.func,a.context,b,c,j,c.id,i)()}),_.bind(a.final,a.context,b,i,j)()}}),A(),_.each(f,function(a){_.bind(a.callback,a.context)()})})})};return{attrs:g,attr:g,column:h,columns:h,field:h,fields:h,reduce:i,inject:i,foldl:i,map:j,collect:j,each:k,forEach:k,tap:l,do:l,after:m,last:m,done:m,execute:n,go:n,run:n}}(a)},F=function(a,b,c){E(a).attr(c).field(b).reduce(function(a,c){return a+c.F[b]},0,function(a,b,d){d.S[c]=a}).execute()};return console.log("%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  The Aaron Sheet  v"+a+"  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•","background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;"),console.log("%c•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸  Last update: "+new Date(1e3*b)+"  ¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•","background: linear-gradient(to right,green,white,white,green); color:black;text-shadow: 0 0 8px white;"),{repeatingSimpleSum:F,repeating:E,config:t,callback:y,callstack:x,debugMode:u,_fn:y,debug:j,error:k,warn:l,info:m,notice:n,log:o}}();
-
     /* ---- END: TheAaronSheet.js ---- */
-
     //Halfling Check
-
     on("change:class sheet:opened", function() {
-
         getAttrs(["Class"], function(values) {
-
             console.log("Class="+ values.Class);
-
             var classid = parseInt(values.Class);
-
             var HalflingBonus = 0;
-
             if (classid === 5) {
-
                 HalflingBonus = 1;
-
                 console.log("Halfling Bonus="+ HalflingBonus);
-
             }
-
             else {
-
                 HalflingBonus = 0;
-
                 console.log("No Halfling Bonus="+ HalflingBonus);
-
             }
-
             setAttrs({
-
                 Missile_Halfling: HalflingBonus
-
             });
-
         });
-
     });
-
     //THAC0 Autofill values
-
     on("change:hitAC0 change:monsterhitac0 sheet:opened", function() {
-
         getAttrs(["HitAC0", "MonsterHitAC0"], function(values) {
-
             console.log("THAC0="+ values.HitAC0);
-
             console.log("Monster THAC0="+ values.MonsterHitAC0);
-
             var AC0 = parseInt(values.HitAC0);
-
             var MAC0 = parseInt(values.MonsterHitAC0);
-
             var AC1 = 1;
-
             var AC2 = 2;
-
             var AC3 = 3;
-
             var AC4 = 4;
-
             var AC5 = 5;
-
             var AC6 = 6;
-
             var AC7 = 7;
-
             var AC8 = 8;
-
             var AC9 = 9;
-
             setAttrs({
-
                 HitAC1: Math.max(AC0 - AC1, 2),
-
                 HitAC2: Math.max((AC0 - AC2), 2),
-
                 HitAC3: Math.max((AC0 - AC3), 2),
-
                 HitAC4: Math.max((AC0 - AC4), 2),
-
                 HitAC5: Math.max((AC0 - AC5), 2),
-
                 HitAC6: Math.max((AC0 - AC6), 2),
-
                 HitAC7: Math.max((AC0 - AC7), 2),
-
                 HitAC8: Math.max((AC0 - AC8), 2),
-
                 HitAC9: Math.max((AC0 - AC9), 2),
-
                 MonsterHitAC1: Math.max((MAC0 - AC1), 2),
-
                 MonsterHitAC2: Math.max((MAC0 - AC2), 2),
-
                 MonsterHitAC3: Math.max((MAC0 - AC3), 2),
-
                 MonsterHitAC4: Math.max((MAC0 - AC4), 2),
-
                 MonsterHitAC5: Math.max((MAC0 - AC5), 2),
-
                 MonsterHitAC6: Math.max((MAC0 - AC6), 2),
-
                 MonsterHitAC7: Math.max((MAC0 - AC7), 2),
-
                 MonsterHitAC8: Math.max((MAC0 - AC8), 2),
-
                 MonsterHitAC9: Math.max((MAC0 - AC9), 2)
-
             });
-
         });
-
     });
-
 </script>
-
